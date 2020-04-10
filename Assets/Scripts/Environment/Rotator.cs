@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This script rotates the trophies
 public class Rotator : MonoBehaviour
 {
 

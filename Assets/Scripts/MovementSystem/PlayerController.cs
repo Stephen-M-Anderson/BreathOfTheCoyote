@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: Maybe try and implement dash? NOT IN THIS SCRIPT ADD IT TO PLAYERCHARACTERCONTROLLER
+//Additional note. Don't try and be a hero. Please only try this if I ask you to and please be careful. It broke multiple times trying to get this to work and look where we are.
 public class PlayerController : MonoBehaviour
 {
     private Animator animate;

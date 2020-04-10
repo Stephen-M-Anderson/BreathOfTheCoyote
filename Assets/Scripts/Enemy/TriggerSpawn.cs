@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This script spawns the enemy when you come into the area. There is a trigger surrounding the strength trial
 public class TriggerSpawn : MonoBehaviour
 {
     public Transform enemyPosition;

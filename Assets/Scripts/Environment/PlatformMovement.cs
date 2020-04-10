@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//simple platform movement script
 public class PlatformMovement : MonoBehaviour
 {
     public GameObject[] points;

@@ -22,13 +22,12 @@ public class TrophyPlatformMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    /// <summary>
     /// Start is called before the first frame update
-    /// </summary>
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();    // Initialize the Rigidbody2D object with this gameobject's Rigidbody2D component that is attached to it in the inspector.
-        movedone = false;
+        movedone = false;                  
         movedonedown = false;
         startMovingForward = false;
         disabled = false;

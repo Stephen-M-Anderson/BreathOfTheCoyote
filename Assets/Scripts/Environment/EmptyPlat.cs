@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This script checks if the platform is empty or if it is touched by the player
 public class EmptyPlat : MonoBehaviour
 {
     public GameObject player;

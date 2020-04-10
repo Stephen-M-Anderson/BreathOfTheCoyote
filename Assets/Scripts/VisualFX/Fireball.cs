@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+//As a quick note, this script is slightly outdated. Fireball spawning is done in the animations
 public class Fireball : MonoBehaviour
 {
     public float speed;
-    public GameObject projectile;
+    public GameObject projectile; 
     private Animator fireSpawn;
     public Transform handLocation;
     public float cooldownTimer;
@@ -42,6 +43,7 @@ public class Fireball : MonoBehaviour
         }
     }
 
+    //This is slightly outdated all fireball spawning is done in animator
     void fireballSpawn()
     {
         GameObject bullet = Instantiate(projectile, handLocation.position - 1.0f * handLocation.forward, Quaternion.identity);

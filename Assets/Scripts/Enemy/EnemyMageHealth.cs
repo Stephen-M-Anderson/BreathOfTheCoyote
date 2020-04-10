@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//For all references look at enemyhealth
 public class EnemyMageHealth : MonoBehaviour
 {
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//main elevator usage
 public class Elevator : MonoBehaviour
 {
     public GameObject[] points;

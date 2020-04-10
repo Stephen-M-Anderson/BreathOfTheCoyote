@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Incomplete respawn mechanic testing
 public class BoundTP : MonoBehaviour
 {
     public GameObject Player;

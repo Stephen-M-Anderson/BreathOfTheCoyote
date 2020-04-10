@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private AudioSource hitSource;
     private bool playdead;
 
+    //grabbing audio
     private void Start()
     {
         deathSource = GameObject.Find("PlayerDeath").GetComponent<AudioSource>();
@@ -32,6 +33,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        //player should be dead
+        // THIS IS NOT WORKING PROPERLY FIND OUT WHY
         if (health <= 0 && playdead)
         {
             hitSource = null;
@@ -42,7 +45,8 @@ public class Player : MonoBehaviour
             playdead = false;
         }
     }
-
+   
+    //Sets everything needed for the new game
     public void NewGame()
     {
         health = 10;
@@ -57,6 +61,7 @@ public class Player : MonoBehaviour
         SaveSystem.NewPlayerData(this);
     }
 
+    //This is our save game system. Saves data and takes screenshot of last game scene
     public void SaveGame()
     {
         playDate = DateTime.Now.ToString();
@@ -71,8 +76,10 @@ public class Player : MonoBehaviour
         SaveSystem.SavePlayerData(this);
     }
 
+    //This loads up the game data from the save chosen
     public void LoadGame()
     {
+        
         PlayerData data = SaveSystem.LoadPlayerData(saveName);
 
         health = data.health;
@@ -96,6 +103,7 @@ public class Player : MonoBehaviour
         //texData = data.texData;
     }
 
+    //The damage script for the player. Runs the sound of taking damage, the damage subtraction and updating the UI to reflect damage taken
     public void DamagePlayer(int damage)
     {
         hitSource.Play();

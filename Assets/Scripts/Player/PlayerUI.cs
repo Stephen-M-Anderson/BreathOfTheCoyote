@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//This is the slider for the health bar used in game will be called in player script when damage is done to player
 public class PlayerUI : MonoBehaviour
 {
     private Slider HealthSlider;

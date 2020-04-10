@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+//This scripts changes all the audio from clip to clip
 public class BattleMusicPlayer : MonoBehaviour
 {
     private int triggerNum = 0;

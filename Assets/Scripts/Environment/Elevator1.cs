@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//small side elevators on jumping puzzle
 public class Elevator1 : MonoBehaviour
 {
     public GameObject[] points;

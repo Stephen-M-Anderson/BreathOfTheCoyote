@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// The goal of this script is to have the player move with the platform it is standing on
 public class PlayerMWPaltform : MonoBehaviour
 {
     private GameObject target = null;

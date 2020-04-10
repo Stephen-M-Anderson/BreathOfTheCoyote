@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is all data for player
 [System.Serializable]
 public class PlayerData
 {
