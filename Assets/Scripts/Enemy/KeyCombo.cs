@@ -34,6 +34,9 @@ public class KeyCombo : MonoBehaviour
     public AudioClip attack2;
     public AudioClip attack3;
 
+    //Added these for the mobile controls
+    public bool keyComboBool;
+
     void Start()
     {
         meleeAction = gameObject.GetComponent<Animator>();
@@ -46,10 +49,21 @@ public class KeyCombo : MonoBehaviour
     //Weapon animations and giving damage to the Weapon
     void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
+        //I would use this code to test the buttons on my touchscreen because if I didn't disable mouseclick it would
+        //think every tap was a mouseclick.
+        //if (keyComboBool == true)
+
+
+        if (Input.GetMouseButtonDown(0) || keyComboBool == true)
         {
+            keyComboBool = false;
             ComboStarter();
         }
+    }
+
+    public void Bool()
+    {
+        keyComboBool = true;
     }
 
     public void ComboStarter()
@@ -97,6 +111,7 @@ public class KeyCombo : MonoBehaviour
             meleeAction.SetInteger("AttackValue", 0);
             canClick = true;
             numClicks = 0;
+
 
             attackSource.Stop();
             attackSource.clip = attack1;
