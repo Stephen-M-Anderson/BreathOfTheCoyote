@@ -131,9 +131,9 @@ public class PlayerCharacterController : MonoBehaviour
             jumpSource.Stop();
 
             //move direction is the vector 3 for controlling rotation
-            moveRotation = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveRotation = new Vector3(moveHorizontal, 0.0f, moveVertical);
             //movedirectionm is the move direction for controlling movement
-            moveDirectionm = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirectionm = new Vector3(moveHorizontal, 0.0f, moveVertical);
             //moveDirection *= speed;
 
             if (Input.GetButton("Jump"))

@@ -44,6 +44,7 @@ public class KeyCombo : MonoBehaviour
     }
 
     //Weapon animations and giving damage to the Weapon
+    //Add touch input right here
     void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0))
