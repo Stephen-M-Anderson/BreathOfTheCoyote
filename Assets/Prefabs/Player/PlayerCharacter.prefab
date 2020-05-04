@@ -1864,6 +1864,8 @@ MonoBehaviour:
   player: {fileID: 2738176738014777633}
   groundedcheck: 0
   BGMSource: {fileID: 0}
+  groundslamBool: 0
+  joystick: {fileID: 0}
 --- !u!143 &2738176738014777639
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1929,6 +1931,8 @@ MonoBehaviour:
   speed: 15
   jumpSpeed: 16
   gravity: 20
+  joystick: {fileID: 0}
+  jumpingBool: 0
 --- !u!114 &1548614324526980420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1946,6 +1950,7 @@ MonoBehaviour:
   attack1: {fileID: 8300000, guid: cdbcfe4743ff6a34682271398696db7b, type: 3}
   attack2: {fileID: 8300000, guid: 0f66e0a857f387a4aa0cc1aab65bfe93, type: 3}
   attack3: {fileID: 8300000, guid: 21796b2e5edd5a64cb7d677452e32eba, type: 3}
+  keyComboBool: 0
 --- !u!114 &8111245024172827316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1980,6 +1985,7 @@ MonoBehaviour:
   cooldownTimer: 0
   BGMSource: {fileID: 0}
   myCamera: {fileID: 0}
+  fireballBool: 0
 --- !u!1 &3427171154807716532
 GameObject:
   m_ObjectHideFlags: 0

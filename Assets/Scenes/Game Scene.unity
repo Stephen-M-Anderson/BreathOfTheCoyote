@@ -403,8 +403,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28642033}
-  m_LocalRotation: {x: 0.07251532, y: 0.16176772, z: -0.011920301, w: 0.9840888}
-  m_LocalPosition: {x: 249.37184, y: 66.87229, z: 794.9077}
+  m_LocalRotation: {x: 0.072515324, y: 0.1617678, z: -0.01192031, w: 0.9840887}
+  m_LocalPosition: {x: 246.52849, y: 66.844, z: 795.8641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1011,6 +1011,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0d2dd4abf817f438fe3463ed3f3dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &65081901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65081888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd140dc6a5e2f845a9fb6ff12671977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeyFuckYouJoystick: {fileID: 341279516}
+  freeLookCam: {fileID: 415143328}
 --- !u!4 &65768326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 493887085554912097, guid: 4a8ebdbf57ccc254a81128d1a6f8474f,
@@ -2822,6 +2836,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31d1ab6e5c1225b498ca9a703edd40cc, type: 3}
+--- !u!114 &341279516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 448405744677323221, guid: 7c814b449e77a594590ed06f92fbc0bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 73007790477160614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &347843620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3393,6 +3419,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 397947577}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &415143328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+    type: 3}
+  m_PrefabInstance: {fileID: 1283405442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319d2fe34a804e245819465c9505ea59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &416208284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8569,6 +8607,16 @@ PrefabInstance:
       propertyPath: PlayerUI
       value: 
       objectReference: {fileID: 73007790477160616}
+    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_YAxis.m_MaxSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_XAxis.m_MaxSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1415446281208013618, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8629,6 +8677,11 @@ PrefabInstance:
       propertyPath: BGMSource
       value: 
       objectReference: {fileID: 1333358074}
+    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 73007790477160615}
     - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: CanvasAnimator
@@ -8639,6 +8692,16 @@ PrefabInstance:
       propertyPath: SaveAnimator
       value: 
       objectReference: {fileID: 913332021}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 73007790477160615}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: HeyFuckYouJoystick
+      value: 
+      objectReference: {fileID: 341279516}
     - target: {fileID: 8111245024172827316, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: BGMSource
@@ -8654,6 +8717,21 @@ PrefabInstance:
       propertyPath: myCamera
       value: 
       objectReference: {fileID: 28642036}
+    - target: {fileID: 5172158829027271394, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.47114
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172158829027271394, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.087953
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069917127559971261, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -8682,47 +8760,17 @@ PrefabInstance:
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8804043
+      value: 0.88040435
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.06265547
+      value: -0.06265548
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.4684712
-      objectReference: {fileID: 0}
-    - target: {fileID: 5512732376204144447, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7322024916440767768, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3379598380180935572, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172158829027271394, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.47114
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172158829027271394, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.087953
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069917127559971261, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+      value: 0.46847117
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -8748,6 +8796,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512732376204144447, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322024916440767768, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379598380180935572, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92c0fcf18393cc345b6e0472e58ea345, type: 3}
@@ -15897,9 +15960,26 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 913332021}
+    - target: {fileID: 7325467036528459814, guid: 7c814b449e77a594590ed06f92fbc0bf,
+        type: 3}
+      propertyPath: m_Name
+      value: Fixed Joystick
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3410426142598139614, guid: 7c814b449e77a594590ed06f92fbc0bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7c814b449e77a594590ed06f92fbc0bf, type: 3}
+--- !u!114 &73007790477160615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7325467036528459818, guid: 7c814b449e77a594590ed06f92fbc0bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 73007790477160614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &73007790477160616 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 73007790477160616, guid: 7c814b449e77a594590ed06f92fbc0bf,
