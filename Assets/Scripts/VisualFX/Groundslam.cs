@@ -39,7 +39,7 @@ public class Groundslam : MonoBehaviour
         //Debug.Log("ANIMATION: " + grndslamAni.GetBool("GroundSlam"));
 
         groundedcheck = GetComponent<PlayerCharacterController>().isOnGround;
-        if (cooldown > 2)
+        if (cooldown > 2 || groundedcheck)
         {
 
             if (Input.GetAxis("Groundslam") != 0 && yeshereIammakinganothergoddamnbool == true)
