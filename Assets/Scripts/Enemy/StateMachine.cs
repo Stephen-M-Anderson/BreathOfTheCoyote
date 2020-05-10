@@ -7,11 +7,10 @@ public class StateMachine : MonoBehaviour
 {
 
     
-    private Dictionary<Type, BaseState> _availableStates; 
-    public BaseState CurrentState{get; private set;}
+    public Dictionary<Type, BaseState> _availableStates; 
+    public BaseState CurrentState{get; set;}
     public event Action<BaseState> OnStateChanged;
     
-
     public void SetState(Dictionary<Type, BaseState> states)
     {
         _availableStates = states;
@@ -21,9 +20,6 @@ public class StateMachine : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-       
-        
-        
         if(CurrentState == null)
         {
             Debug.Log("Current state is null");
@@ -41,7 +37,7 @@ public class StateMachine : MonoBehaviour
         }
     }
 
-    private void SwitchToNewState(Type nextState)
+    public void SwitchToNewState(Type nextState)
     {
         CurrentState =  _availableStates[nextState];
         Debug.Log("Switching to new state..");

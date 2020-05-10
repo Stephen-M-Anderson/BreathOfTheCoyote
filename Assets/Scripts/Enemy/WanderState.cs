@@ -6,11 +6,18 @@ using UnityEngine.AI;
 
 public class WanderState : BaseState
 {
+    
+     
     private Boximon _boximon;
-    private Vector3 testPostion;
+    private Transform currentTarget;
+    private Vector3 wanderTarget;
+    private float wanderRange = 10f;
+    private float IdleSwitchRange = 1.5f;
+    private NavMeshHit navHit;
+    public bool ChillTfOut = false;
     public WanderState(Boximon boximon) : base(boximon.gameObject)
     {
-        _boximon = boximon;
+        _boximon = boximon; 
     }
     
     
@@ -18,54 +25,77 @@ public class WanderState : BaseState
     
     public override Type Tick()
     {
-        //Start or continue wander time for this state
-        _boximon.wanderTimer += Time.deltaTime;
-        Debug.Log("Looking for random position");
-        testPostion = FindRandomPosition(transform.position, 15.0f,-1);
-
-        if(IsPositionValid(testPostion) && _boximon.wanderTimer >= _boximon.max_wanderTimer){
-            
-            //No object in the position to Boximon object
-            _boximon.testPostion = testPostion;
-            //set new target as the Boximon object tested position
-            _boximon.SetTarget(_boximon.testPostion);
-            _boximon.navMeshAgent.SetDestination(_boximon.Target);
-            _boximon.wanderTimer = 0;
-            return null;
-        }
         
-        //State Action
-        Debug.Log("In wander state");
-        if(Vector3.Distance(transform.position, _boximon.player.transform.position) <= _boximon.lookRadius){
-            Debug.Log("Transitioning to chase state");
-            _boximon.SetTarget(_boximon.player.position);
-            _boximon.navMeshAgent.SetDestination(-_boximon.Target);
-             return typeof(ChaseState);
+        if(_boximon.animationTimer < 0 && Time.time >  _boximon.nextCheck)
+        {
+            _boximon.myAnimator.SetBool("TakingHit",false);
+            _boximon.myAnimator.SetBool("Idle", false);
+            _boximon.myAnimator.SetBool("Movement", true);
+            _boximon.myAnimator.SetBool("Attack", false);
+        
+            _boximon.nextCheck = Time.time + _boximon.checkRate;
+             _boximon.enemyHit.Stop();
+            _boximon.enemyWalking.Play();
+            CheckIfToWander();
+        }
+        if( _boximon.animationTimer < 0 && Vector3.Distance(_boximon.navMeshAgent.destination, transform.position) < IdleSwitchRange )
+        {
+            _boximon.myAnimator.SetBool("TakingHit",false);
+            _boximon.myAnimator.SetBool("Idle", true);
+            _boximon.myAnimator.SetBool("Movement", false);
+            _boximon.myAnimator.SetBool("Attack", false);
+
+             _boximon.enemyHit.Stop();
+            _boximon.enemyWalking.Stop();
+        
         }
 
-        _boximon.navMeshAgent.SetDestination(_boximon.Target);
+        if(!ChillTfOut && _boximon.animationTimer < 0 && Vector3.Distance(transform.position, _boximon.player.position) < _boximon.lookRadius)
+        {
+            _boximon.navMeshAgent.SetDestination(_boximon.player.position);
+            return typeof(ChaseState);
+        }
         return null;
-    
+  
     }
 
-        //Find new random Vec 3 Position to test for destination switch.
-        public static Vector3 FindRandomPosition (Vector3 origin, float distance, int layermask) {
-            Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
-            randomDirection += origin;
-            NavMeshHit navHit;
-            NavMesh.SamplePosition (randomDirection, out navHit, distance, layermask);
-            return navHit.position;
+    public bool CheckIfToWander()
+    {
+        if(RandomWanderTarget(transform.position, wanderRange, out wanderTarget))
+         {
+            _boximon.navMeshAgent.enabled = true;  
+            _boximon.navMeshAgent.SetDestination(wanderTarget);
+            _boximon.enemyHit.Stop();
+           _boximon.enemyWalking.Play();
+            return true;
+         }
+         else
+         {
+            Debug.Log("No target");
+            _boximon.navMeshAgent.SetDestination(wanderTarget);
+            _boximon.enemyWalking.Stop();
+            _boximon.enemyHit.Stop();
+            return false;
+         }
+        
+    }
+
+    bool RandomWanderTarget(Vector3 center,  float range, out Vector3 result)
+    {
+        Vector3 randomPoint = center + UnityEngine.Random.insideUnitSphere * wanderRange;
+        if(NavMesh.SamplePosition(randomPoint,  out navHit, 10.0f, NavMesh.AllAreas))
+        {
+           
+            result = navHit.position;   
+            return true;
+        }
+        else
+        {
+            result = center;
+            Debug.Log(navHit.distance);
+            return false;
         }
 
-        public bool IsPositionValid(Vector3 nextPosition)
-        {
-            RaycastHit hit;
-            if(Physics.Raycast(transform.position, nextPosition, out hit))
-            {
-                Debug.DrawRay(transform.position, nextPosition, Color.red);
-                return true;  
-            }
-            return false;   
-            
-        }
+    }
+     
 }

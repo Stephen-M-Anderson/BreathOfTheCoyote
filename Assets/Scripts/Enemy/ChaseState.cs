@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class ChaseState : BaseState
 {
     private Boximon _boximon;
-    private Vector3 testPostion;
+
     public ChaseState(Boximon boximon) : base(boximon.gameObject)
     {
         _boximon = boximon;
@@ -17,23 +17,30 @@ public class ChaseState : BaseState
 
     public override Type Tick()
     {
-        Debug.Log("In chase state");
-       if(Vector3.Distance(transform.position, _boximon.player.position) > _boximon.lookRadius){
-            Debug.Log("Transitioning to Wander state");
-            _boximon.navMeshAgent.enabled = false;
+      
+        _boximon.myAnimator.SetBool("TakingHit",false);
+        _boximon.myAnimator.SetBool("Idle", false);
+        _boximon.myAnimator.SetBool("Movement", true);
+        _boximon.myAnimator.SetBool("Attack", false);
+
+        _boximon.enemyHit.Stop();
+        _boximon.enemyWalking.Play();
+
+       if( Vector3.Distance(transform.position, _boximon.player.position) > _boximon.lookRadius){
+           
             return typeof(WanderState);
         }
         
         if(Vector3.Distance(transform.position, _boximon.player.position) <= _boximon.lookRadius &&Vector3.Distance(transform.position, _boximon.player.position) > _boximon.stopDistance )
         { 
-            Debug.Log("Player seen");
+          
             _boximon.navMeshAgent.enabled = true;
             _boximon.SetTarget(_boximon.player.position);
             _boximon.navMeshAgent.SetDestination(_boximon.Target);        
             return typeof(ChaseState);               
         }
         else if(Vector3.Distance(transform.position, _boximon.player.position) <= _boximon.stopDistance){
-            Debug.Log("Player in Range");
+       
             _boximon.navMeshAgent.enabled = false;
             return typeof(AttackState);
         }
