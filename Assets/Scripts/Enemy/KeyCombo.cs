@@ -71,7 +71,6 @@ public class KeyCombo : MonoBehaviour
     public void ComboCheck()
     {
         canClick = false;
-        
 
         if(meleeAction.GetCurrentAnimatorStateInfo(0).IsName("PlayerCharacter_Attack1") && numClicks == 1)
         {

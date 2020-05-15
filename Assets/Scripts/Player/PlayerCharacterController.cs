@@ -123,7 +123,6 @@ public class PlayerCharacterController : MonoBehaviour
 
         if (characterController.isGrounded)
         {
-
             // We are grounded, so recalculate
             // move direction directly from axes
             animate.SetBool("Jumping", false);
