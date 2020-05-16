@@ -40,6 +40,7 @@ public class PlayerCharacterController : MonoBehaviour
     //Added these for the mobile controls
 
     public Joystick joystick;
+    public Joystick HeyFuckYouJoystick;
     //This bool determines whether or not you're jumping. It sets to true when the touchscreen jump button is pressed.
     public bool jumpingBool;
     //Mobile controls version of the Vector3s that determine a lot of the movement for the character.
@@ -80,6 +81,7 @@ public class PlayerCharacterController : MonoBehaviour
 
     void Update()
     {
+
         //always keep palyers scale up to date
         transform.localScale = new Vector3(1, 1, 1);
 

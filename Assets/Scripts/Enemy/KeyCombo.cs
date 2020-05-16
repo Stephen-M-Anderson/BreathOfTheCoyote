@@ -47,6 +47,7 @@ public class KeyCombo : MonoBehaviour
     }
 
     //Weapon animations and giving damage to the Weapon
+    //Add touch input right here
     void FixedUpdate()
     {
         //I would use this code to test the buttons on my touchscreen because if I didn't disable mouseclick it would
