@@ -14,7 +14,7 @@ public class Groundslam : MonoBehaviour
     private float timeClip;
     private Vector3 moveDirection = Vector3.zero;
     public AudioSource BGMSource;
-    private bool yeshereIammakinganothergoddamnbool;
+   // private bool yeshereIammakinganothergoddamnbool;
 
     //Added these for the mobile controls
     public bool groundslamBool;
@@ -47,7 +47,7 @@ public class Groundslam : MonoBehaviour
         if (cooldown > 2 || groundedcheck)
         {
 
-            if (Input.GetAxis("Groundslam") != 0 || groundslamBool == true && yeshereIammakinganothergoddamnbool == true)
+            if (Input.GetAxis("Groundslam") != 0 || groundslamBool == true)
             {
                 //yeshereIammakinganothergoddamnbool = false;
                 grndslamAni.SetBool("GroundSlam", true);
