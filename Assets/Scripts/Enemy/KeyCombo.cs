@@ -54,7 +54,7 @@ public class KeyCombo : MonoBehaviour
         //if (keyComboBool == true)
 
 
-        if (Input.GetMouseButtonDown(0) || keyComboBool == true)
+        if (keyComboBool == true)
         {
             keyComboBool = false;
             ComboStarter();
