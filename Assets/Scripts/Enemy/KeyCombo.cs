@@ -35,7 +35,7 @@ public class KeyCombo : MonoBehaviour
     public AudioClip attack3;
 
     //Added these for the mobile controls
-    public bool keyComboBool;
+    public bool keyComboBool = false;
 
     void Start()
     {
@@ -55,7 +55,7 @@ public class KeyCombo : MonoBehaviour
         //if (keyComboBool == true)
 
 
-        if (Input.GetMouseButtonDown(0) || keyComboBool == true)
+        if ( keyComboBool == true)
         {
             keyComboBool = false;
             ComboStarter();
@@ -86,7 +86,6 @@ public class KeyCombo : MonoBehaviour
     public void ComboCheck()
     {
         canClick = false;
-        
 
         if(meleeAction.GetCurrentAnimatorStateInfo(0).IsName("PlayerCharacter_Attack1") && numClicks == 1)
         {

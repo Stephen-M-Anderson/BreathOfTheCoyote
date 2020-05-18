@@ -9,25 +9,31 @@ public class PauseHandler : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public Player player;
-
+    public bool pauseBool = false;
     public Animator animator;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Cancel"))
+        if(pauseBool == true)
         {
             Debug.Log("Pausing game");
-
+            /*
             if(gamePaused)
             {
                 Resume();
             }
-            else
-            {
-                Pause();
-            }
+            */
+            //else
+            pauseBool = false;
+
+            Pause();
+            
         }
+    }
+    public void Bool()
+    {
+        pauseBool = true;
     }
 
     public void Resume()

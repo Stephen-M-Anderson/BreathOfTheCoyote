@@ -16,10 +16,10 @@ public class CMFreelookControlOverride : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        freeLookCam.m_XAxis.Value += HeyFuckYouJoystick.Horizontal;
-        freeLookCam.m_YAxis.Value += HeyFuckYouJoystick.Vertical;
-        Debug.Log(freeLookCam.m_XAxis.Value);
-        Debug.Log(freeLookCam.m_YAxis.Value);
+        freeLookCam.m_XAxis.Value += HeyFuckYouJoystick.Horizontal*3;
+        freeLookCam.m_YAxis.Value += -HeyFuckYouJoystick.Vertical/50;
+      //  Debug.Log("X Axis" + freeLookCam.m_XAxis.Value);
+    //    Debug.Log("Y axis" + freeLookCam.m_YAxis.Value);
 
     }
 }

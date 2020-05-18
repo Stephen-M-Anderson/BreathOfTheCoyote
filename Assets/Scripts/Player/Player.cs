@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     {
         deathSource = GameObject.Find("PlayerDeath").GetComponent<AudioSource>();
         hitSource = GameObject.Find("PlayerHit").GetComponent<AudioSource>();
-        playdead = true;
+        playdead = true;      
     }
 
     private void Update()
@@ -44,6 +45,11 @@ public class Player : MonoBehaviour
             GetComponent<KeyCombo>().enabled = false;
             playdead = false;
         }
+    }
+
+    private void ReloadDeath()
+    {
+        SceneManager.LoadScene("Game Scene");
     }
    
     //Sets everything needed for the new game
@@ -68,7 +74,7 @@ public class Player : MonoBehaviour
         playTime = Time.timeSinceLevelLoad;
         //saveImage = ScreenCapture.CaptureScreenshotAsTexture();
         //texData = saveImage.EncodeToPNG();
-        texData = ScreenCapture.CaptureScreenshotAsTexture().EncodeToPNG();
+        //texData = ScreenCapture.CaptureScreenshotAsTexture().EncodeToPNG();
 
         Debug.Log("[PLAYER] Play Date: " + playDate);
         Debug.Log("[PLAYER] Play Time: " + playTime);
