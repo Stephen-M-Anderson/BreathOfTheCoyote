@@ -17,7 +17,7 @@ public class Groundslam : MonoBehaviour
    // private bool yeshereIammakinganothergoddamnbool;
 
     //Added these for the mobile controls
-    public bool groundslamBool;
+    public bool groundslamBool = false;
     private Vector3 moveDirectionMobile = Vector3.zero;
     public Joystick joystick;
     //public PlayerCharacterController playerCharacterController;

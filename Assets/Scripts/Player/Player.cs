@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
         playTime = Time.timeSinceLevelLoad;
         //saveImage = ScreenCapture.CaptureScreenshotAsTexture();
         //texData = saveImage.EncodeToPNG();
-        texData = ScreenCapture.CaptureScreenshotAsTexture().EncodeToPNG();
+        //texData = ScreenCapture.CaptureScreenshotAsTexture().EncodeToPNG();
 
         Debug.Log("[PLAYER] Play Date: " + playDate);
         Debug.Log("[PLAYER] Play Time: " + playTime);

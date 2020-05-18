@@ -42,7 +42,7 @@ public class PlayerCharacterController : MonoBehaviour
     public Joystick joystick;
     public Joystick HeyFuckYouJoystick;
     //This bool determines whether or not you're jumping. It sets to true when the touchscreen jump button is pressed.
-    public bool jumpingBool;
+    public bool jumpingBool = false;
     //Mobile controls version of the Vector3s that determine a lot of the movement for the character.
     private Vector3 moveRotationMobile = Vector3.zero;
     private Vector3 moveDirectionmMobile = Vector3.zero;

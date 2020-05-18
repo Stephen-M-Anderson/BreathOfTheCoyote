@@ -18,8 +18,8 @@ public class CMFreelookControlOverride : MonoBehaviour
     {
         freeLookCam.m_XAxis.Value += HeyFuckYouJoystick.Horizontal*3;
         freeLookCam.m_YAxis.Value += -HeyFuckYouJoystick.Vertical/50;
-        Debug.Log("X Axis" + freeLookCam.m_XAxis.Value);
-        Debug.Log("Y axis" + freeLookCam.m_YAxis.Value);
+      //  Debug.Log("X Axis" + freeLookCam.m_XAxis.Value);
+    //    Debug.Log("Y axis" + freeLookCam.m_YAxis.Value);
 
     }
 }
