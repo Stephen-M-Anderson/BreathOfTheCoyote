@@ -21,12 +21,12 @@ public class TakeHitState : BaseState
         {   
             
             _boximon.animationTimer = 1.0f;
-            /*
+            
             _boximon.myAnimator.SetBool("Movement",false);
             _boximon.myAnimator.SetBool("Idle",false);
             _boximon.myAnimator.SetBool("Attack",false);
-            _boximon.myAnimator.SetBool("TakingHit",true);
-            */
+            _boximon.myAnimator.SetBool("TakingHit",false);
+        
              _boximon.myAnimator.SetTrigger("TakingHit 0");
             return typeof(TakeHitState);
         }
