@@ -14,6 +14,9 @@ public class Fireball : MonoBehaviour
     public AudioSource BGMSource;
     public Camera myCamera;
 
+    //Added these for the mobile controls
+    public bool fireballBool = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +34,23 @@ public class Fireball : MonoBehaviour
         if (cooldownTimer > 1.0f)
 
         {
-            if (Input.GetAxis("Fireball") > 0)
+            Debug.Log(fireballBool);
+            if (Input.GetAxis("Fireball") > 0 || fireballBool == true)
 
             {
                 cooldownTimer = 0f;
                 fireSpawn.SetBool("FireballAction", true);
+                fireballBool = false;
                 //Invoke("fireballSpawn", 0.5f);
 
 
             }
         }
+    }
+
+    public void Bool()
+    {
+        fireballBool = true;
     }
 
     //This is slightly outdated all fireball spawning is done in animator

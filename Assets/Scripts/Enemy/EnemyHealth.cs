@@ -28,7 +28,6 @@ public class EnemyHealth : MonoBehaviour
     private AudioSource enemyHit;
     private AudioSource enemyMelee;
     private AudioSource enemyDeath;
-
     private bool playdead;
     private bool collided;
     private bool Enemycollided;
