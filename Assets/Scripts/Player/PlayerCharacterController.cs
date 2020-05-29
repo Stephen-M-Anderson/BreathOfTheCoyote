@@ -171,6 +171,7 @@ public class PlayerCharacterController : MonoBehaviour
                 animate.SetBool("Jumping", true);
                 jumpSource.Play();
                 walkingSource.Stop();
+
             }
         }
         else
@@ -232,6 +233,11 @@ public class PlayerCharacterController : MonoBehaviour
 
         if (characterController.isGrounded)
         {
+            if (isOnGround == false)
+            {
+                animate.SetBool("Jumping", false);
+                jumpSource.Stop();
+            }
             isOnGround = true;
         }
         else 
