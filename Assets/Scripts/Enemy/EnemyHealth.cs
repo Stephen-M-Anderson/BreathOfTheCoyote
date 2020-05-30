@@ -28,7 +28,6 @@ public class EnemyHealth : MonoBehaviour
     private AudioSource enemyHit;
     private AudioSource enemyMelee;
     private AudioSource enemyDeath;
-
     private bool playdead;
     private bool collided;
     private bool Enemycollided;
@@ -165,7 +164,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Weapon") && playerAnimator.GetInteger("AttackValue") == 1 ||
             other.gameObject.CompareTag("Weapon") && playerAnimator.GetInteger("AttackValue") == 2 ||
-            other.gameObject.CompareTag("Weapon") && playerAnimator.GetInteger("AttackValue") == 3)
+            other.gameObject.CompareTag("Weapon") && playerAnimator.GetInteger("AttackValue") == 3 ||
+            other.gameObject.GetComponent<FireballMovement>() != null)
         {
             if (!collided) // added this if statement to only allow hit every .9 second
             {

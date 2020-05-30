@@ -15,7 +15,7 @@ public class Fireball : MonoBehaviour
     public Camera myCamera;
 
     //Added these for the mobile controls
-    public bool fireballBool;
+    public bool fireballBool = false;
 
 
     // Start is called before the first frame update
@@ -34,6 +34,7 @@ public class Fireball : MonoBehaviour
         if (cooldownTimer > 1.0f)
 
         {
+            Debug.Log(fireballBool);
             if (Input.GetAxis("Fireball") > 0 || fireballBool == true)
 
             {
