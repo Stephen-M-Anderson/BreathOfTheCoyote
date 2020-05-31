@@ -308,5 +308,14 @@ public class PlayerCharacterController : MonoBehaviour
             GetComponent<Player>().SaveGame();
             CanvasAnimator.SetTrigger("FadeOut");
         }
+
+        if (collision.gameObject.CompareTag("Healer"))
+        {
+            if (GetComponent<Player>().health < GetComponent<Player>().maxHealth)
+            {
+                gameObject.SendMessage("HealPlayer", collision.GetComponent<HealPlayer>().HealAmount);
+                Destroy(collision.gameObject);
+            }
+        }
     }
 }
