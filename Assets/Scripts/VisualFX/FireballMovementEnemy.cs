@@ -77,7 +77,7 @@ public class FireballMovementEnemy : MonoBehaviour
         GameObject blowup = Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
         Destroy(blowup, 3.0f);
 
-       BGMSource.Play();
+        BGMSource.Play();
         //Come back to later down the line. The attampt going on here is to try and blend the time between the ball and the explosion
         Destroy(gameObject);
         //Destroy(gameObject, .001f);

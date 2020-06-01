@@ -15,6 +15,7 @@ TagManager:
   - Elevator
   - Combat
   - Weapon
+  - GroundSlam
   layers:
   - Default
   - TransparentFX
