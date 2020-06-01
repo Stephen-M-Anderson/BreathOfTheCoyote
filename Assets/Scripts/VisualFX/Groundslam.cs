@@ -14,7 +14,12 @@ public class Groundslam : MonoBehaviour
     private float timeClip;
     private Vector3 moveDirection = Vector3.zero;
     public AudioSource BGMSource;
-    private bool yeshereIammakinganothergoddamnbool;
+   // private bool yeshereIammakinganothergoddamnbool;
+
+    //Added these for the mobile controls
+    public bool groundslamBool = false;
+    private Vector3 moveDirectionMobile = Vector3.zero;
+    public Joystick joystick;
     //public PlayerCharacterController playerCharacterController;
 
 
@@ -26,7 +31,7 @@ public class Groundslam : MonoBehaviour
         grndslamAni = GetComponent<Animator>();
         cooldown = 0f;
         
-        yeshereIammakinganothergoddamnbool = true;
+        //yeshereIammakinganothergoddamnbool = true;
     }
 
     // Update is called once per frame
@@ -42,10 +47,11 @@ public class Groundslam : MonoBehaviour
         if (cooldown > 2 || groundedcheck)
         {
 
-            if (Input.GetAxis("Groundslam") != 0 && yeshereIammakinganothergoddamnbool == true)
+            if (Input.GetAxis("Groundslam") != 0 || groundslamBool == true)
             {
-                yeshereIammakinganothergoddamnbool = false;
+                //yeshereIammakinganothergoddamnbool = false;
                 grndslamAni.SetBool("GroundSlam", true);
+                groundslamBool = false;
                 //Invoke("groundEffect", 1.1f);
 
 
@@ -70,14 +76,20 @@ public class Groundslam : MonoBehaviour
 
     }
 
+    public void Bool()
+    {
+        groundslamBool = true;
+    }
+
     void groundEffect()
     {
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+        moveDirection = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical);
         GameObject slamvfx = Instantiate(groundv1, transform.position + (3f * transform.forward), transform.rotation);
         Destroy(slamvfx, 2.0f);
         // BGMSource.Play();
         grndslamAni.SetBool("GroundSlam", false);
         cooldown = 0f;
-        yeshereIammakinganothergoddamnbool = true;
+        //yeshereIammakinganothergoddamnbool = true;
     }
 }

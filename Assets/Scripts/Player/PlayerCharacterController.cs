@@ -37,6 +37,18 @@ public class PlayerCharacterController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
 
+    //Added these for the mobile controls
+
+    public Joystick joystick;
+    public Joystick HeyFuckYouJoystick;
+    //This bool determines whether or not you're jumping. It sets to true when the touchscreen jump button is pressed.
+    public bool jumpingBool = false;
+    //Mobile controls version of the Vector3s that determine a lot of the movement for the character.
+    private Vector3 moveRotationMobile = Vector3.zero;
+    private Vector3 moveDirectionmMobile = Vector3.zero;
+
+
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -61,8 +73,15 @@ public class PlayerCharacterController : MonoBehaviour
         deathSource = GameObject.Find("PlayerDeath").GetComponent<AudioSource>();
     }
 
+    //This function was added to be accessed by the touchscreen touch button's onclick.
+    public void Bool()
+    {
+        jumpingBool = true;
+    }
+
     void Update()
     {
+
         //always keep palyers scale up to date
         transform.localScale = new Vector3(1, 1, 1);
 
@@ -72,7 +91,11 @@ public class PlayerCharacterController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveSprint = Input.GetAxis("Sprint");
 
-        if (moveSprint != 0 && (moveVertical != 0f || moveHorizontal != 0f))
+        //I added these for the mobile controls
+        float moveVerticalMobile = joystick.Vertical;
+        float moveHorizontalMobile = joystick.Horizontal;
+
+        if (moveSprint != 0 && (moveVertical != 0f || moveHorizontal != 0f || moveVerticalMobile != 0f || moveHorizontalMobile != 0f))
         {
             walkspeed = speed * 1.5f;
             if (isOnGround)
@@ -88,7 +111,7 @@ public class PlayerCharacterController : MonoBehaviour
                 //idleSource.Stop();
             }
         }
-        else if (moveVertical != 0f || moveHorizontal != 0f)
+        else if (moveVertical != 0f || moveHorizontal != 0f || moveVerticalMobile != 0f || moveHorizontalMobile != 0f)
         {
             walkspeed = speed;
             if (isOnGround)
@@ -123,7 +146,6 @@ public class PlayerCharacterController : MonoBehaviour
 
         if (characterController.isGrounded)
         {
-
             // We are grounded, so recalculate
             // move direction directly from axes
             animate.SetBool("Jumping", false);
@@ -132,15 +154,20 @@ public class PlayerCharacterController : MonoBehaviour
 
             //move direction is the vector 3 for controlling rotation
             moveRotation = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveRotationMobile = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical);
+
             //movedirectionm is the move direction for controlling movement
             moveDirectionm = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirectionmMobile = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical);
             //moveDirection *= speed;
 
-            if (Input.GetButton("Jump"))
+            if (Input.GetButton("Jump") || jumpingBool == true)
             {
                 animate.SetBool("Running", false);
+                jumpingBool = false; //Added for mobile support.
 
                 moveDirectionm.y = jumpSpeed;
+                moveDirectionmMobile.y = jumpSpeed;
                 animate.SetBool("Jumping", true);
                 jumpSource.Play();
                 walkingSource.Stop();
@@ -149,9 +176,10 @@ public class PlayerCharacterController : MonoBehaviour
         else
         {
             moveRotation = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveRotationMobile = new Vector3(joystick.Horizontal, 0.0f, joystick.Vertical);
         }
 
-        if (moveRotation.magnitude > 0 && !animate.GetBool("IsAttacking"))
+        if (moveRotation.magnitude > 0 && !animate.GetBool("IsAttacking") || moveRotationMobile.magnitude > 0 && !animate.GetBool("IsAttacking"))
         {
             transform.parent = null;
             transform.parent = null;
@@ -164,10 +192,17 @@ public class PlayerCharacterController : MonoBehaviour
             {
                 Quaternion inputFrame = Quaternion.LookRotation(fwd, Vector3.up);
                 moveRotation = inputFrame * moveRotation;
+                moveRotationMobile = inputFrame * moveRotationMobile;
                 if (moveRotation.magnitude > 0.001f)
                 {
                     moveRotation *= walkspeed;
                     transformrotation = Quaternion.LookRotation(moveRotation.normalized, Vector3.up);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, transformrotation, Time.deltaTime * smooth);
+                }
+                else if (moveRotationMobile.magnitude > 0.001f)
+                {
+                    moveRotationMobile *= walkspeed;
+                    transformrotation = Quaternion.LookRotation(moveRotationMobile.normalized, Vector3.up);
                     transform.rotation = Quaternion.Slerp(transform.rotation, transformrotation, Time.deltaTime * smooth);
                 }
             }
@@ -179,12 +214,16 @@ public class PlayerCharacterController : MonoBehaviour
         moveDirectionm.y -= gravity * Time.deltaTime;
         moveDirectionm.x = moveRotation.x;
         moveDirectionm.z = moveRotation.z;
+        moveDirectionmMobile.y -= gravity * Time.deltaTime;
+        moveDirectionmMobile.x = moveRotationMobile.x;
+        moveDirectionmMobile.z = moveRotationMobile.z;
         //Debug.Log(moveDirectionm.y);
 
 
         // Move the controller
         //moveDirection.y = moveDirectiong.y;
         characterController.Move(moveDirectionm * Time.deltaTime);
+        characterController.Move(moveDirectionmMobile * Time.deltaTime);
         /*
         //Currently handled by the code provided by Unity above, will need rework for just animations
         WalkHandler();
