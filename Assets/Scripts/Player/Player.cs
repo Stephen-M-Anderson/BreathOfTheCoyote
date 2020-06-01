@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public bool TrialOfStrength;
     public bool TrialOfMind;
     public bool TrialOfAgility;
+    public bool enemies1;
+    public bool enemies2;
+    public bool enemies3;
     public Vector3 playerPosition;
     public Quaternion playerRotation;
     public string saveName;
@@ -60,6 +63,9 @@ public class Player : MonoBehaviour
         TrialOfStrength = false;
         TrialOfMind = false;
         TrialOfAgility = false;
+        enemies1 = false;
+        enemies2 = false;
+        enemies3 = false;
         playTime = 0.0f;
 
         Debug.Log("[PLAYER] Creating new game: " + saveName);
@@ -93,6 +99,9 @@ public class Player : MonoBehaviour
         TrialOfStrength = data.TrialOfStrength;
         TrialOfMind = data.TrialOfMind;
         TrialOfAgility = data.TrialOfAgility;
+        enemies1 = data.enemies1;
+        enemies2 = data.enemies2;
+        enemies3 = data.enemies3;
         saveName = data.saveName;
         playTime = data.playTime;
         playDate = data.playDate;

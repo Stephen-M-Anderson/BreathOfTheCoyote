@@ -13,6 +13,9 @@ public class PlayerData
     public bool TrialOfStrength;
     public bool TrialOfMind;
     public bool TrialOfAgility;
+    public bool enemies1;
+    public bool enemies2;
+    public bool enemies3;
     public string saveName;
     public float playTime;
     public string playDate;
@@ -38,6 +41,10 @@ public class PlayerData
         TrialOfStrength = player.TrialOfStrength;
         TrialOfMind = player.TrialOfMind;
         TrialOfAgility = player.TrialOfAgility;
+        enemies1 = player.enemies1;
+        enemies2 = player.enemies2;
+        enemies3 = player.enemies3;
+        
 
         saveName = player.saveName;
         playTime = player.playTime;

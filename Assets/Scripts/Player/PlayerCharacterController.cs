@@ -24,6 +24,9 @@ public class PlayerCharacterController : MonoBehaviour
     public GameObject MindTrophy;
     public GameObject StrengthTrophy;
     public GameObject AgilityTrophy;
+    public GameObject enemies1;
+    public GameObject enemies2;
+    public GameObject enemies3;
 
     public Animator CanvasAnimator;
     public Animator SaveAnimator;
@@ -296,8 +299,49 @@ public class PlayerCharacterController : MonoBehaviour
         if (collision.gameObject.name == "Village" && GetComponent<Player>().TrialOfAgility == true
             && GetComponent<Player>().TrialOfStrength == true && GetComponent<Player>().TrialOfMind == true)
         {
-            Debug.Log("Loading: Credits");
+            Debug.Log("Loading: Level 2");
             PlayerPrefs.SetInt("LevelToLoad", 3);
+            Debug.Log("Level To Load: " + PlayerPrefs.GetInt("LevelToLoad"));
+            GetComponent<Player>().SaveGame();
+            CanvasAnimator.SetTrigger("FadeOut");
+        }
+
+
+        if (collision.gameObject.name == "Enemies1" && GetComponent<Player>().enemies1 != true)
+        {
+            GetComponent<Player>().enemies1 = true;
+            GetComponent<Player>().SaveGame();
+         //  StrengthTrophy.SetActive(true);
+            SaveAnimator.SetBool("Saving", true);
+
+            //Destroy(collision.gameObject);
+            //collision.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.name == "Enemies2" && GetComponent<Player>().enemies2 != true)
+        {
+            GetComponent<Player>().enemies2 = true;
+            GetComponent<Player>().SaveGame();
+           // StrengthTrophy.SetActive(true);
+            SaveAnimator.SetBool("Saving", true);
+
+            //Destroy(collision.gameObject);
+            //collision.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.name == "enemies3" && GetComponent<Player>().enemies3 != true)
+        {
+            GetComponent<Player>().enemies3 = true;
+            GetComponent<Player>().SaveGame();
+           // StrengthTrophy.SetActive(true);
+            SaveAnimator.SetBool("Saving", true);
+
+            //Destroy(collision.gameObject);
+            //collision.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.name == "Boat" && GetComponent<Player>().enemies1 == true
+    && GetComponent<Player>().enemies2 == true && GetComponent<Player>().enemies3 == true)
+        {
+            Debug.Log("Loading: Credits");
+            PlayerPrefs.SetInt("LevelToLoad", 4);
             Debug.Log("Level To Load: " + PlayerPrefs.GetInt("LevelToLoad"));
             GetComponent<Player>().SaveGame();
             CanvasAnimator.SetTrigger("FadeOut");

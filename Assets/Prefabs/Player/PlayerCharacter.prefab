@@ -1932,6 +1932,7 @@ MonoBehaviour:
   jumpSpeed: 16
   gravity: 20
   joystick: {fileID: 0}
+  HeyFuckYouJoystick: {fileID: 0}
   jumpingBool: 0
 --- !u!114 &1548614324526980420
 MonoBehaviour:

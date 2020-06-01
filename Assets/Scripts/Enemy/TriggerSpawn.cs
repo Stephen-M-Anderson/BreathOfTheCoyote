@@ -6,7 +6,7 @@ using UnityEngine;
 public class TriggerSpawn : MonoBehaviour
 {
     public Transform enemyPosition;
-    public GameObject litAF;
+ //   public GameObject litAF;
     public GameObject enemy1;
     public GameObject enemy2;
     public GameObject enemy3;
@@ -39,8 +39,8 @@ public class TriggerSpawn : MonoBehaviour
             {
 
                 Instantiate(enemy1, enemyPosition.position, enemyPosition.rotation);
-                GameObject spawnvfx = Instantiate(litAF, transform.position, transform.rotation);
-                Destroy(spawnvfx, 4.0f);
+               // GameObject spawnvfx = Instantiate(litAF, transform.position, transform.rotation);
+               // Destroy(spawnvfx, 4.0f);
                 spawnCounter = 1;
             }
         }
@@ -79,14 +79,14 @@ public class TriggerSpawn : MonoBehaviour
     void Spawn2()
     {
         Instantiate(enemy2, enemyPosition.position, enemyPosition.rotation);
-        GameObject spawnvfx = Instantiate(litAF, transform.position, transform.rotation);
-        Destroy(spawnvfx, 4.0f);
+       // GameObject spawnvfx = Instantiate(litAF, transform.position, transform.rotation);
+      //  Destroy(spawnvfx, 4.0f);
     }
 
     void Spawn3()
     {
         Instantiate(enemy3, enemyPosition.position, enemyPosition.rotation);
-        GameObject spawnvfx = Instantiate(litAF, transform.position, transform.rotation);
-        Destroy(spawnvfx, 4.0f);
+     //   GameObject spawnvfx = Instantiate(litAF, transform.position, transform.rotation);
+      //  Destroy(spawnvfx, 4.0f);
     }
 }
