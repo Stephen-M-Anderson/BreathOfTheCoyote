@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float health;
+    public float maxHealth;
     public bool LeftVillage;
     public bool TrialOfStrength;
     public bool TrialOfMind;
@@ -32,7 +33,8 @@ public class Player : MonoBehaviour
     {
         deathSource = GameObject.Find("PlayerDeath").GetComponent<AudioSource>();
         hitSource = GameObject.Find("PlayerHit").GetComponent<AudioSource>();
-        playdead = true;      
+        playdead = true;
+        maxHealth = health;
     }
 
     private void Update()
@@ -62,7 +64,7 @@ public class Player : MonoBehaviour
         LeftVillage = false;
         TrialOfStrength = false;
         TrialOfMind = false;
-        TrialOfAgility = false;
+        TrialOfAgility = false;
         enemies1 = false;
         enemies2 = false;
         enemies3 = false;
@@ -124,6 +126,19 @@ public class Player : MonoBehaviour
         hitSource.Play();
         health -= damage;
         //Debug.Log("Damage: " + health);
+        PlayerUI.UpdateSlider(health);
+    }
+
+    public void HealPlayer(int healing)
+    {
+        if (health + healing >= maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += healing;
+        }
         PlayerUI.UpdateSlider(health);
     }
 }

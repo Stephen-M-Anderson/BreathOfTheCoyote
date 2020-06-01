@@ -174,6 +174,7 @@ public class PlayerCharacterController : MonoBehaviour
                 animate.SetBool("Jumping", true);
                 jumpSource.Play();
                 walkingSource.Stop();
+
             }
         }
         else
@@ -235,6 +236,11 @@ public class PlayerCharacterController : MonoBehaviour
 
         if (characterController.isGrounded)
         {
+            if (isOnGround == false)
+            {
+                animate.SetBool("Jumping", false);
+                jumpSource.Stop();
+            }
             isOnGround = true;
         }
         else 
@@ -304,9 +310,9 @@ public class PlayerCharacterController : MonoBehaviour
             Debug.Log("Level To Load: " + PlayerPrefs.GetInt("LevelToLoad"));
             GetComponent<Player>().SaveGame();
             CanvasAnimator.SetTrigger("FadeOut");
-        }
-
-
+        }
+
+
         if (collision.gameObject.name == "Enemies1" && GetComponent<Player>().enemies1 != true)
         {
             GetComponent<Player>().enemies1 = true;
@@ -316,7 +322,7 @@ public class PlayerCharacterController : MonoBehaviour
 
             //Destroy(collision.gameObject);
             //collision.gameObject.SetActive(false);
-        }
+        }
         if (collision.gameObject.name == "Enemies2" && GetComponent<Player>().enemies2 != true)
         {
             GetComponent<Player>().enemies2 = true;
@@ -326,7 +332,7 @@ public class PlayerCharacterController : MonoBehaviour
 
             //Destroy(collision.gameObject);
             //collision.gameObject.SetActive(false);
-        }
+        }
         if (collision.gameObject.name == "enemies3" && GetComponent<Player>().enemies3 != true)
         {
             GetComponent<Player>().enemies3 = true;
@@ -336,8 +342,8 @@ public class PlayerCharacterController : MonoBehaviour
 
             //Destroy(collision.gameObject);
             //collision.gameObject.SetActive(false);
-        }
-        if (collision.gameObject.name == "Boat" && GetComponent<Player>().enemies1 == true
+        }
+        if (collision.gameObject.name == "Boat" && GetComponent<Player>().enemies1 == true
     && GetComponent<Player>().enemies2 == true && GetComponent<Player>().enemies3 == true)
         {
             Debug.Log("Loading: Credits");
@@ -345,6 +351,15 @@ public class PlayerCharacterController : MonoBehaviour
             Debug.Log("Level To Load: " + PlayerPrefs.GetInt("LevelToLoad"));
             GetComponent<Player>().SaveGame();
             CanvasAnimator.SetTrigger("FadeOut");
+        }
+
+        if (collision.gameObject.CompareTag("Healer"))
+        {
+            if (GetComponent<Player>().health < GetComponent<Player>().maxHealth)
+            {
+                gameObject.SendMessage("HealPlayer", collision.GetComponent<HealPlayer>().HealAmount);
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

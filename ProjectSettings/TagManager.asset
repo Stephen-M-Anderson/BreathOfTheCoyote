@@ -15,6 +15,7 @@ TagManager:
   - Elevator
   - Combat
   - Weapon
+  - Healer
   layers:
   - Default
   - TransparentFX
