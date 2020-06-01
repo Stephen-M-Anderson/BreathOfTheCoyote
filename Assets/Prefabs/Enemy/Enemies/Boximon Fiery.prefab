@@ -1417,10 +1417,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7843079031529318415}
   - component: {fileID: 8175933610500501555}
-  - component: {fileID: 8175933610500501554}
   - component: {fileID: 8202604437321144174}
   - component: {fileID: 479385072203475823}
   - component: {fileID: 8065861221473576768}
+  - component: {fileID: 5921769192828363649}
+  - component: {fileID: 282065753920181372}
+  - component: {fileID: 7251935846649247857}
+  - component: {fileID: 4634446112161885881}
   m_Layer: 0
   m_Name: Boximon Fiery
   m_TagString: AI
@@ -1470,34 +1473,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
---- !u!114 &8175933610500501554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6522178781821032988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9b99397f12ab9344a6869b48c5e4dd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 15
-  currentHealth: 0
-  fireballDamage: 8
-  damageTaken: 5
-  maxDistance: 8
-  damageDealt: 1
-  cooldown: 0
-  distance: 0
-  holder: {fileID: 1456810165671682900, guid: 4a8ebdbf57ccc254a81128d1a6f8474f, type: 3}
-  player: {fileID: 2738176738014777633, guid: 92c0fcf18393cc345b6e0472e58ea345, type: 3}
-  animate: {fileID: 479385072203475823}
-  isDead: 0
-  isDamaged: 0
-  stupidboolname: 0
-  johnCena: 0
-  boxCollider: {fileID: 8065861221473576768}
 --- !u!54 &8202604437321144174
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1524,7 +1499,7 @@ Animator:
   m_GameObject: {fileID: 6522178781821032988}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ab49f3cef633f1d4c84f8c46ec6c0b74, type: 3}
-  m_Controller: {fileID: 9100000, guid: e7c204b36f5cfd94ba5bdf0ecc891a7d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7f266de472324324892f7fc71fe504bc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1546,6 +1521,84 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!195 &5921769192828363649
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522178781821032988}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.96
+  m_Speed: 3.5
+  m_Acceleration: 15
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.27
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &282065753920181372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522178781821032988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfd10505ba78924c927851c5302babf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7251935846649247857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522178781821032988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d061e92a7eac047a11696229d320e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 20
+  maxHealth: 20
+  currentHealth: 0
+  enemyWalking: {fileID: 0}
+  enemyHit: {fileID: 0}
+  enemyMelee: {fileID: 0}
+  enemyDeath: {fileID: 0}
+  checkRate: 5
+  nextCheck: 0
+  TakeHitTimer: 0
+  AttackTimer: 0
+  stopDistance: 6
+  MinWander: 4
+  MaxWander: 6
+  lookRadius: 20
+  attackTimer: 0
+  Playercol: {fileID: 0}
+  playerWeaponHitBox: {fileID: 0}
+--- !u!114 &4634446112161885881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522178781821032988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1791bd89dd9d65f48a57f37f3e4f0166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &6542865544530356261
 GameObject:
   m_ObjectHideFlags: 0

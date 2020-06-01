@@ -17,10 +17,10 @@ public class TakeHitState : BaseState
     {
         Debug.Log("Still in Hit State");
         _boximon.navMeshAgent.SetDestination(transform.position);
-        if(_boximon.animationTimer <= 0)
+        if(_boximon.TakeHitTimer <= 0)
         {   
             
-            _boximon.animationTimer = 1.0f;
+            _boximon.TakeHitTimer = 1.0f;
             
             _boximon.myAnimator.SetBool("Movement",false);
             _boximon.myAnimator.SetBool("Idle",false);
