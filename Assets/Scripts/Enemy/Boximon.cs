@@ -65,14 +65,6 @@ public class Boximon : MonoBehaviour
 
     [HideInInspector]
     public GameObject playerWeaponHitBox;
-
-    
-
-    
-
-
-    
-
     
     private void Awake()
     {
