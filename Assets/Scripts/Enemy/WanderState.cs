@@ -11,8 +11,8 @@ public class WanderState : BaseState
     private Boximon _boximon;
     private Transform currentTarget;
     private Vector3 wanderTarget;
-    private float wanderRange = 10f;
-    private float IdleSwitchRange = 1.5f;
+    private float wanderRange = 15f;
+    private float IdleSwitchRange = 5.0f;
     private NavMeshHit navHit;
     public bool ChillTfOut = false;
     public WanderState(Boximon boximon) : base(boximon.gameObject)
@@ -26,7 +26,7 @@ public class WanderState : BaseState
     public override Type Tick()
     {
         
-        if(_boximon.animationTimer < 0 && Time.time >  _boximon.nextCheck)
+        if(_boximon.TakeHitTimer <= 0 && Time.time >  _boximon.nextCheck)
         {
             _boximon.myAnimator.SetBool("TakingHit",false);
             _boximon.myAnimator.SetBool("Idle", false);
@@ -38,7 +38,7 @@ public class WanderState : BaseState
             _boximon.enemyWalking.Play();
             CheckIfToWander();
         }
-        if( _boximon.animationTimer < 0 && Vector3.Distance(_boximon.navMeshAgent.destination, transform.position) < IdleSwitchRange )
+        if( _boximon.TakeHitTimer <= 0 && Vector3.Distance(_boximon.navMeshAgent.destination, transform.position) < IdleSwitchRange )
         {
             _boximon.myAnimator.SetBool("TakingHit",false);
             _boximon.myAnimator.SetBool("Idle", true);
@@ -50,12 +50,12 @@ public class WanderState : BaseState
         
         }
 
-        if(!ChillTfOut && _boximon.animationTimer < 0 && Vector3.Distance(transform.position, _boximon.player.position) < _boximon.lookRadius)
+        if(!ChillTfOut && _boximon.TakeHitTimer <= 0 && Vector3.Distance(transform.position, _boximon.player.position) < _boximon.lookRadius)
         {
             _boximon.navMeshAgent.SetDestination(_boximon.player.position);
             return typeof(ChaseState);
         }
-        return null;
+        return typeof(WanderState);
   
     }
 

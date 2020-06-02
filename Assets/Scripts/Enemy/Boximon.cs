@@ -37,7 +37,8 @@ public class Boximon : MonoBehaviour
     public float nextCheck;
 
     [HideInInspector]
-    public float animationTimer;
+    public float TakeHitTimer;
+    public float AttackTimer;
         
 
     public float stopDistance;
@@ -64,14 +65,6 @@ public class Boximon : MonoBehaviour
 
     [HideInInspector]
     public GameObject playerWeaponHitBox;
-
-    
-
-    
-
-
-    
-
     
     private void Awake()
     {
@@ -94,16 +87,17 @@ public class Boximon : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(myAnimator.GetBool("Attack"));
+
         player = GameObject.Find("PlayerCharacter").transform;
         navMeshAgent.speed = speed;
-        animationTimer = animationTimer - Time.deltaTime;
-
+        TakeHitTimer = TakeHitTimer - Time.deltaTime;
         
-    
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (animationTimer < 0 && 
+        if (TakeHitTimer < 0 && 
         (other.gameObject.CompareTag("Weapon") && playerAnimator.GetInteger("AttackValue") == 1 ||
         other.gameObject.CompareTag("Weapon") && playerAnimator.GetInteger("AttackValue") == 2  ||
         other.gameObject.CompareTag("Weapon") && playerAnimator.GetInteger("AttackValue") == 3  ||
@@ -176,5 +170,13 @@ public class Boximon : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lookRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, stopDistance);
+    }
+
+    public void StopAnim()
+    {
+        Debug.Log("Stopanim has been seen");
+        myAnimator.SetBool("Attack", false);
+        myAnimator.SetBool("Idle", true);
+        Debug.Log("Exiting");
     }
 }
