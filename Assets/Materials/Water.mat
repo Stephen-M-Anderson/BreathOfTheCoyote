@@ -8,15 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
-  m_Shader: {fileID: -6465566751694194690, guid: 1a7efa7bb15833e4f902bfd9cca24e78,
+  m_Shader: {fileID: -6465566751694194690, guid: 6cdee6ebb8d65684b9e04b78f3bc1b54,
     type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _BLENDMODE_ALPHA _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
+    RenderType: Transparent
   disabledShaderPasses:
   - TransparentBackface
   - MOTIONVECTORS
@@ -109,14 +110,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_1B473B00: 0
-    - Vector1_2FC65606: 5
-    - Vector1_385211AB: 7
     - Vector1_9100C9B0: 5
     - Vector1_B4BAD203: 7
     - Vector1_B5021CC6: 5
-    - Vector1_C85661C5: 0.1
     - Vector1_CECBE36B: 1
-    - Vector1_D8D634DD: 1
     - Vector1_E094DBF7: 0.1
     - _AORemapMax: 1
     - _AORemapMin: 0
@@ -189,7 +186,6 @@ Material:
     - _Metallic: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1
-    - _Outline: 0.005
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -243,8 +239,6 @@ Material:
     m_Colors:
     - Color_7278B9FF: {r: 0, g: 0.1400171, b: 0.7924528, a: 0}
     - Color_BDC7A6EB: {r: 1.360269, g: 5.006714, b: 5.340313, a: 0}
-    - Color_DBC0618F: {r: 0.345098, g: 1.34902, b: 1.87451, a: 0}
-    - Color_E73CEB2B: {r: 0.227451, g: 0.5490196, b: 0.9803922, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -255,7 +249,6 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
