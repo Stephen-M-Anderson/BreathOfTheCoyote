@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4788,8 +4788,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424561619}
-  m_LocalRotation: {x: 0.0725155, y: 0.16176718, z: -0.011920295, w: 0.98408884}
-  m_LocalPosition: {x: 790.2256, y: 25.728294, z: 430.85092}
+  m_LocalRotation: {x: 0.072515495, y: 0.16176718, z: -0.011920291, w: 0.98408884}
+  m_LocalPosition: {x: 790.2256, y: 25.728298, z: 430.85092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4995,17 +4995,17 @@ PrefabInstance:
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12822114
+      value: 0.12822317
       objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.14123584
+      value: 0.14123395
       objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6759585
+      value: 0.675959
       objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -5015,7 +5015,7 @@ PrefabInstance:
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7118229
+      value: -0.7118225
       objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -5030,7 +5030,7 @@ PrefabInstance:
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.047206126
+      value: 0.04720584
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -5040,7 +5040,7 @@ PrefabInstance:
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.056521263
+      value: 0.05652154
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -5060,17 +5060,17 @@ PrefabInstance:
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.034040693
+      value: -0.034042083
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0060408944
+      value: 0.00604223
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7237197
+      value: -0.72371966
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -5531,7 +5531,7 @@ GameObject:
   - component: {fileID: 522577784}
   - component: {fileID: 522577787}
   m_Layer: 0
-  m_Name: DirtWall (3)
+  m_Name: DirtWall (3) ->GrassWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5581,7 +5581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5173966397720942367, guid: 729fd923a3e6e684ea671a300a0140a0, type: 3}
+  - {fileID: 2100000, guid: 6373f4d94a40315429ae5e11be88a731, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5619,7 +5619,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 522577782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf5e28256d75b5c42bf2875eae265cef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8286341037861bb498b62c0ea12a62bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &524605163
@@ -7233,8 +7233,9 @@ GameObject:
   - component: {fileID: 698194822}
   - component: {fileID: 698194821}
   - component: {fileID: 698194824}
+  - component: {fileID: 698194825}
   m_Layer: 0
-  m_Name: DirtWall (4)
+  m_Name: DirtWall (4) ->GrassWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7284,7 +7285,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5173966397720942367, guid: 729fd923a3e6e684ea671a300a0140a0, type: 3}
+  - {fileID: 2100000, guid: 6373f4d94a40315429ae5e11be88a731, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7323,6 +7324,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf5e28256d75b5c42bf2875eae265cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &698194825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698194819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8286341037861bb498b62c0ea12a62bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &709490664
@@ -9524,7 +9537,7 @@ GameObject:
   - component: {fileID: 999079874}
   - component: {fileID: 999079877}
   m_Layer: 0
-  m_Name: DirtWall (1)
+  m_Name: DirtWall (1) ->GrassWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9574,7 +9587,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5173966397720942367, guid: 729fd923a3e6e684ea671a300a0140a0, type: 3}
+  - {fileID: 2100000, guid: 6373f4d94a40315429ae5e11be88a731, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9612,7 +9625,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 999079872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf5e28256d75b5c42bf2875eae265cef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8286341037861bb498b62c0ea12a62bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1026777448
@@ -15024,7 +15037,7 @@ GameObject:
   - component: {fileID: 1635398116}
   - component: {fileID: 1635398119}
   m_Layer: 0
-  m_Name: DirtWall (2)
+  m_Name: DirtWall (2) ->GrassWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15074,7 +15087,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5173966397720942367, guid: 729fd923a3e6e684ea671a300a0140a0, type: 3}
+  - {fileID: 2100000, guid: 6373f4d94a40315429ae5e11be88a731, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15112,7 +15125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1635398114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf5e28256d75b5c42bf2875eae265cef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8286341037861bb498b62c0ea12a62bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1642043593
@@ -17725,7 +17738,7 @@ GameObject:
   - component: {fileID: 2037910536}
   - component: {fileID: 2037910539}
   m_Layer: 0
-  m_Name: DirtWall
+  m_Name: DirtWall ->GrassWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17775,7 +17788,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5173966397720942367, guid: 729fd923a3e6e684ea671a300a0140a0, type: 3}
+  - {fileID: 2100000, guid: 6373f4d94a40315429ae5e11be88a731, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17813,7 +17826,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2037910534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf5e28256d75b5c42bf2875eae265cef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8286341037861bb498b62c0ea12a62bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2063235167
