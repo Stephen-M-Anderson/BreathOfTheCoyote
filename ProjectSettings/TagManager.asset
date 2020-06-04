@@ -16,6 +16,7 @@ TagManager:
   - Combat
   - Weapon
   - GroundSlam
+  - Healer
   layers:
   - Default
   - TransparentFX
