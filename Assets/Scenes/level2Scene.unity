@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 960985797}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.43801475, g: 0.4859808, b: 0.56626064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -72,7 +72,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 1
+    m_BakeBackend: 2
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
@@ -96,8 +96,9 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingDataAsset: {fileID: 112000000, guid: dfcf1db3f7ab35146b78490d01027a78,
+    type: 2}
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4545,7 +4546,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424561619}
-  m_LocalRotation: {x: 0.07251541, y: 0.16176774, z: -0.011920322, w: 0.9840888}
+  m_LocalRotation: {x: 0.072515406, y: 0.16176774, z: -0.011920321, w: 0.9840888}
   m_LocalPosition: {x: 148.71498, y: 18.1, z: 814.5943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4842,7 +4843,7 @@ PrefabInstance:
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.03890257
+      value: 0.038902566
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -4852,7 +4853,7 @@ PrefabInstance:
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.06252724
+      value: 0.06252723
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829150878004, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -9564,20 +9565,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3867101859931444187}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1048912944
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048912943}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 1796874208143324201, guid: 3e8f33483c99e79418eb756ec23131f5, type: 3}
 --- !u!65 &1048912946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10888,25 +10875,6 @@ Transform:
   m_Father: {fileID: 1589698582}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1202830337 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7117651663839747274, guid: f03ca26e3a9d9a3468b876ff9eee83b1,
-    type: 3}
-  m_PrefabInstance: {fileID: 3867101859931444187}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1202830339
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202830337}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.37286, y: 12.2475, z: 10.671238}
-  m_Center: {x: 3.9308174, y: 6.12375, z: 6.6898975}
 --- !u!1001 &1210888808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16473,25 +16441,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1800758426}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1821101335 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1075571875107860109, guid: f03ca26e3a9d9a3468b876ff9eee83b1,
-    type: 3}
-  m_PrefabInstance: {fileID: 3867101859931444187}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1821101337
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821101335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.598515, y: 12.2475, z: 10.671258}
-  m_Center: {x: 5.2992573, y: 6.12375, z: 5.335522}
 --- !u!1 &1828702154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8644579657434936683, guid: 2652ae6c5eecef74094450a11c494a3f,
