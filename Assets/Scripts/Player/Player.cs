@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 
     private void ReloadDeath()
     {
-        SceneManager.LoadScene("Game Scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
    
     //Sets everything needed for the new game
