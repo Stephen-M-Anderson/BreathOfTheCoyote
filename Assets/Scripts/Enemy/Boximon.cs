@@ -9,7 +9,7 @@ using System.Linq;
 
 public class Boximon : MonoBehaviour
 {
-    
+
     //General
     [HideInInspector]
     public Transform player;
@@ -152,7 +152,7 @@ public class Boximon : MonoBehaviour
    public void SnackTime()
     {
         attackTimer = 0f;
-        Playercol.gameObject.GetComponent<Player>().DamagePlayer(5);
+        Playercol.gameObject.GetComponent<Player>().DamagePlayer(3);
     }
    public void AudioNoise()
     {

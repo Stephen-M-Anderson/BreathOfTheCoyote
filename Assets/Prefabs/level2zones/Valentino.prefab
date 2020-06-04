@@ -119,6 +119,55 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 35.399998, y: 2.3825078, z: 14.400003}
   m_Center: {x: -0.00006103485, y: 0.070408285, z: 4.9083827e-11}
+--- !u!1 &2549384302980339987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 743589191003196327}
+  - component: {fileID: 6775511339410765944}
+  m_Layer: 0
+  m_Name: MageSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &743589191003196327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549384302980339987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.81, y: 15.66, z: 17.98}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1791087489333814639}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6775511339410765944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549384302980339987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3883e69e6faf0cd4f9aca6bade7880e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCopy: {fileID: 0}
+  Mage1: {fileID: 0}
+  Mage2: {fileID: 0}
+  Mage3: {fileID: 0}
+  Mage4: {fileID: 0}
+  spawnDistance: 50
 --- !u!65 &2473703064662920021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -504,6 +553,7 @@ Transform:
   - {fileID: 8728468169400720025}
   - {fileID: 4885664035011137958}
   - {fileID: 4336899981186589722}
+  - {fileID: 743589191003196327}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -542,11 +592,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502001761320884644}
     m_Modifications:
-    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterPlane (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 4249524871194621010, guid: 9010a30789bf8574ca3835ace8025e8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -616,6 +661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterPlane (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9010a30789bf8574ca3835ace8025e8b, type: 3}
@@ -1167,11 +1217,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4912954220575823898}
     m_Modifications:
-    - target: {fileID: 1466790745196595828, guid: d51c65c0995e4d64ea529a13451907db,
-        type: 3}
-      propertyPath: m_Name
-      value: Boximon Fiery-Mage (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 2450045821615405159, guid: d51c65c0995e4d64ea529a13451907db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1226,6 +1271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466790745196595828, guid: d51c65c0995e4d64ea529a13451907db,
+        type: 3}
+      propertyPath: m_Name
+      value: Boximon Fiery-Mage (4)
       objectReference: {fileID: 0}
     - target: {fileID: 5635796190183865276, guid: d51c65c0995e4d64ea529a13451907db,
         type: 3}
@@ -1945,15 +1995,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f59c61b08da974bb6a667a3b0d1c1f, type: 3}
---- !u!4 &7877910430575762821 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2893915715415946911}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6559682062876864406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2893915715415946911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7877910430575762821 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
     type: 3}
   m_PrefabInstance: {fileID: 2893915715415946911}
   m_PrefabAsset: {fileID: 0}
@@ -2208,11 +2258,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502001761320884644}
     m_Modifications:
-    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterPlane (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4249524871194621010, guid: 9010a30789bf8574ca3835ace8025e8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2283,6 +2328,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterPlane (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9010a30789bf8574ca3835ace8025e8b, type: 3}
 --- !u!4 &1680701141536983176 stripped
@@ -2298,11 +2348,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4912954220575823898}
     m_Modifications:
-    - target: {fileID: 1466790745196595828, guid: d51c65c0995e4d64ea529a13451907db,
-        type: 3}
-      propertyPath: m_Name
-      value: Boximon Fiery-Mage (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2450045821615405159, guid: d51c65c0995e4d64ea529a13451907db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2357,6 +2402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466790745196595828, guid: d51c65c0995e4d64ea529a13451907db,
+        type: 3}
+      propertyPath: m_Name
+      value: Boximon Fiery-Mage (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5635796190183865276, guid: d51c65c0995e4d64ea529a13451907db,
         type: 3}
@@ -2550,15 +2600,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d06fc930fc69ff42897193096771172, type: 3}
---- !u!4 &8178896644287483542 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
-    type: 3}
-  m_PrefabInstance: {fileID: 3817913272137049484}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5177484750624210053 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
+    type: 3}
+  m_PrefabInstance: {fileID: 3817913272137049484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8178896644287483542 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
     type: 3}
   m_PrefabInstance: {fileID: 3817913272137049484}
   m_PrefabAsset: {fileID: 0}
@@ -3229,11 +3279,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502001761320884644}
     m_Modifications:
-    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterPlane (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4249524871194621010, guid: 9010a30789bf8574ca3835ace8025e8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3303,6 +3348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterPlane (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9010a30789bf8574ca3835ace8025e8b, type: 3}
@@ -3486,15 +3536,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d06fc930fc69ff42897193096771172, type: 3}
---- !u!4 &187522972634219579 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
-    type: 3}
-  m_PrefabInstance: {fileID: 5179284607866973985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3801441599901169192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
+    type: 3}
+  m_PrefabInstance: {fileID: 5179284607866973985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &187522972634219579 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
     type: 3}
   m_PrefabInstance: {fileID: 5179284607866973985}
   m_PrefabAsset: {fileID: 0}
@@ -3686,11 +3736,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502001761320884644}
     m_Modifications:
-    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterPlane (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 4249524871194621010, guid: 9010a30789bf8574ca3835ace8025e8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3760,6 +3805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterPlane (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9010a30789bf8574ca3835ace8025e8b, type: 3}
@@ -3848,15 +3898,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f59c61b08da974bb6a667a3b0d1c1f, type: 3}
---- !u!4 &1539120052828781856 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5775507282684253754}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2524078820351070003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5775507282684253754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1539120052828781856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
     type: 3}
   m_PrefabInstance: {fileID: 5775507282684253754}
   m_PrefabAsset: {fileID: 0}
@@ -3957,11 +4007,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502001761320884644}
     m_Modifications:
-    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterPlane
-      objectReference: {fileID: 0}
     - target: {fileID: 4249524871194621010, guid: 9010a30789bf8574ca3835ace8025e8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4031,6 +4076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterPlane
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9010a30789bf8574ca3835ace8025e8b, type: 3}
@@ -4364,15 +4414,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f59c61b08da974bb6a667a3b0d1c1f, type: 3}
---- !u!4 &1385545142213640343 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6215184337670777741}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2693478237333320324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6215184337670777741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1385545142213640343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e2f59c61b08da974bb6a667a3b0d1c1f,
     type: 3}
   m_PrefabInstance: {fileID: 6215184337670777741}
   m_PrefabAsset: {fileID: 0}
@@ -4383,11 +4433,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4912954220575823898}
     m_Modifications:
-    - target: {fileID: 1466790745196595828, guid: d51c65c0995e4d64ea529a13451907db,
-        type: 3}
-      propertyPath: m_Name
-      value: Boximon Fiery-Mage (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2450045821615405159, guid: d51c65c0995e4d64ea529a13451907db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4442,6 +4487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466790745196595828, guid: d51c65c0995e4d64ea529a13451907db,
+        type: 3}
+      propertyPath: m_Name
+      value: Boximon Fiery-Mage (3)
       objectReference: {fileID: 0}
     - target: {fileID: 5635796190183865276, guid: d51c65c0995e4d64ea529a13451907db,
         type: 3}
@@ -4545,15 +4595,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d06fc930fc69ff42897193096771172, type: 3}
---- !u!4 &2181343000742196834 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
-    type: 3}
-  m_PrefabInstance: {fileID: 6575003841293213048}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2891018757152638065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
+    type: 3}
+  m_PrefabInstance: {fileID: 6575003841293213048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2181343000742196834 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
     type: 3}
   m_PrefabInstance: {fileID: 6575003841293213048}
   m_PrefabAsset: {fileID: 0}
@@ -4896,15 +4946,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d06fc930fc69ff42897193096771172, type: 3}
---- !u!1 &2017063082122098914 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
-    type: 3}
-  m_PrefabInstance: {fileID: 7557006338396414443}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3289129623767993073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
+    type: 3}
+  m_PrefabInstance: {fileID: 7557006338396414443}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2017063082122098914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
     type: 3}
   m_PrefabInstance: {fileID: 7557006338396414443}
   m_PrefabAsset: {fileID: 0}
@@ -4915,11 +4965,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4912954220575823898}
     m_Modifications:
-    - target: {fileID: 1466790745196595828, guid: d51c65c0995e4d64ea529a13451907db,
-        type: 3}
-      propertyPath: m_Name
-      value: Boximon Fiery-Mage (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 2450045821615405159, guid: d51c65c0995e4d64ea529a13451907db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4974,6 +5019,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466790745196595828, guid: d51c65c0995e4d64ea529a13451907db,
+        type: 3}
+      propertyPath: m_Name
+      value: Boximon Fiery-Mage (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5635796190183865276, guid: d51c65c0995e4d64ea529a13451907db,
         type: 3}
@@ -5090,11 +5140,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3502001761320884644}
     m_Modifications:
-    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
-        type: 3}
-      propertyPath: m_Name
-      value: WaterPlane (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 4249524871194621010, guid: 9010a30789bf8574ca3835ace8025e8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5164,6 +5209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249524871194621014, guid: 9010a30789bf8574ca3835ace8025e8b,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterPlane (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9010a30789bf8574ca3835ace8025e8b, type: 3}
@@ -5257,15 +5307,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d06fc930fc69ff42897193096771172, type: 3}
---- !u!4 &3993232413855466271 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
-    type: 3}
-  m_PrefabInstance: {fileID: 8219205073884407813}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &86015214523822348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
+    type: 3}
+  m_PrefabInstance: {fileID: 8219205073884407813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3993232413855466271 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
     type: 3}
   m_PrefabInstance: {fileID: 8219205073884407813}
   m_PrefabAsset: {fileID: 0}
@@ -5353,15 +5403,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d06fc930fc69ff42897193096771172, type: 3}
---- !u!1 &802242908328899598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
-    type: 3}
-  m_PrefabInstance: {fileID: 8647983011373673735}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4429706348624856605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
+    type: 3}
+  m_PrefabInstance: {fileID: 8647983011373673735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &802242908328899598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
     type: 3}
   m_PrefabInstance: {fileID: 8647983011373673735}
   m_PrefabAsset: {fileID: 0}
@@ -5449,15 +5499,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d06fc930fc69ff42897193096771172, type: 3}
---- !u!4 &4336731237171418863 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
-    type: 3}
-  m_PrefabInstance: {fileID: 8743068918474145269}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &753354364707906812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d06fc930fc69ff42897193096771172,
+    type: 3}
+  m_PrefabInstance: {fileID: 8743068918474145269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4336731237171418863 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8d06fc930fc69ff42897193096771172,
     type: 3}
   m_PrefabInstance: {fileID: 8743068918474145269}
   m_PrefabAsset: {fileID: 0}
