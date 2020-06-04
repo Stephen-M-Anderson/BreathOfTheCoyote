@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.VFX;
 
 public class PlayerCharacterController : MonoBehaviour
 {
@@ -49,6 +50,9 @@ public class PlayerCharacterController : MonoBehaviour
     //Mobile controls version of the Vector3s that determine a lot of the movement for the character.
     private Vector3 moveRotationMobile = Vector3.zero;
     private Vector3 moveDirectionmMobile = Vector3.zero;
+    public VisualEffect Radiation;
+    public static readonly string VFX_Rate = "Respawn Rate"; //VFX graph variable
+
 
 
 
@@ -313,9 +317,10 @@ public class PlayerCharacterController : MonoBehaviour
         }
 
 
-        if (collision.gameObject.name == "Enemies1" && GetComponent<Player>().enemies1 != true)
+        if (collision.gameObject.name == "Trial1Finish" && GetComponent<Player>().Trial1 != true)
         {
-            GetComponent<Player>().enemies1 = true;
+            GetComponent<Player>().Trial1 = true;
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
             GetComponent<Player>().SaveGame();
          //  StrengthTrophy.SetActive(true);
             SaveAnimator.SetBool("Saving", true);
@@ -323,9 +328,10 @@ public class PlayerCharacterController : MonoBehaviour
             //Destroy(collision.gameObject);
             //collision.gameObject.SetActive(false);
         }
-        if (collision.gameObject.name == "Enemies2" && GetComponent<Player>().enemies2 != true)
+        if (collision.gameObject.name == "Trial2Finish" && GetComponent<Player>().Trial2 != true)
         {
-            GetComponent<Player>().enemies2 = true;
+            GetComponent<Player>().Trial2 = true;
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
             GetComponent<Player>().SaveGame();
            // StrengthTrophy.SetActive(true);
             SaveAnimator.SetBool("Saving", true);
@@ -333,9 +339,10 @@ public class PlayerCharacterController : MonoBehaviour
             //Destroy(collision.gameObject);
             //collision.gameObject.SetActive(false);
         }
-        if (collision.gameObject.name == "enemies3" && GetComponent<Player>().enemies3 != true)
+        if (collision.gameObject.name == "Trial3Finish" && GetComponent<Player>().Trial3 != true)
         {
-            GetComponent<Player>().enemies3 = true;
+            GetComponent<Player>().Trial3 = true;
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
             GetComponent<Player>().SaveGame();
            // StrengthTrophy.SetActive(true);
             SaveAnimator.SetBool("Saving", true);
@@ -343,8 +350,7 @@ public class PlayerCharacterController : MonoBehaviour
             //Destroy(collision.gameObject);
             //collision.gameObject.SetActive(false);
         }
-        if (collision.gameObject.name == "Boat" && GetComponent<Player>().enemies1 == true
-    && GetComponent<Player>().enemies2 == true && GetComponent<Player>().enemies3 == true)
+        if (collision.gameObject.name == "Boat" && GetComponent<Player>().Trial1 == true && GetComponent<Player>().Trial2 == true && GetComponent<Player>().Trial3 == true)
         {
             Debug.Log("Loading: Credits");
             PlayerPrefs.SetInt("LevelToLoad", 4);
