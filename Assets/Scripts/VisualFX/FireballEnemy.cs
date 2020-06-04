@@ -33,7 +33,7 @@ public class FireballEnemy : MonoBehaviour
         if (cooldownTimer > 3.0f)
         {
                 cooldownTimer = 0f;
-                //Invoke("fireballSpawn", 0.5f);
+                Invoke("fireballSpawn", 0.5f);
         }
     }
 

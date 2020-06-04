@@ -5,10 +5,6 @@ using UnityEngine;
 public class FallTP : MonoBehaviour
 {
     public GameObject destination;
-    public void Start()
-    {
-        
-    }
 
     public void OnTriggerEnter(Collider col)
     {
