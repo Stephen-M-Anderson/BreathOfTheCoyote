@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3215280201142702227}
   - component: {fileID: 8857033514896029346}
   - component: {fileID: 4857368236802177925}
+  - component: {fileID: -748616624271896745}
   m_Layer: 0
   m_Name: Trial2Finish
-  m_TagString: Untagged
+  m_TagString: Healer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +134,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd5bf2432b5a5a4cb0c0fc6e9580d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-748616624271896745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626997719042795086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae36c54159c73548a9799a98efc5b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealAmount: 3
