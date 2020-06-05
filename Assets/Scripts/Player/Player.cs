@@ -7,10 +7,14 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float health;
+    public float maxHealth;
     public bool LeftVillage;
     public bool TrialOfStrength;
     public bool TrialOfMind;
     public bool TrialOfAgility;
+    public bool Trial1;
+    public bool Trial2;
+    public bool Trial3;
     public Vector3 playerPosition;
     public Quaternion playerRotation;
     public string saveName;
@@ -29,7 +33,8 @@ public class Player : MonoBehaviour
     {
         deathSource = GameObject.Find("PlayerDeath").GetComponent<AudioSource>();
         hitSource = GameObject.Find("PlayerHit").GetComponent<AudioSource>();
-        playdead = true;      
+        playdead = true;
+        maxHealth = health;
     }
 
     private void Update()
@@ -49,7 +54,7 @@ public class Player : MonoBehaviour
 
     private void ReloadDeath()
     {
-        SceneManager.LoadScene("Game Scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
    
     //Sets everything needed for the new game
@@ -59,7 +64,10 @@ public class Player : MonoBehaviour
         LeftVillage = false;
         TrialOfStrength = false;
         TrialOfMind = false;
-        TrialOfAgility = false;
+        TrialOfAgility = false;
+        Trial1 = false;
+        Trial2 = false;
+        Trial3 = false;
         playTime = 0.0f;
 
         Debug.Log("[PLAYER] Creating new game: " + saveName);
@@ -74,7 +82,7 @@ public class Player : MonoBehaviour
         playTime = Time.timeSinceLevelLoad;
         //saveImage = ScreenCapture.CaptureScreenshotAsTexture();
         //texData = saveImage.EncodeToPNG();
-        //texData = ScreenCapture.CaptureScreenshotAsTexture().EncodeToPNG();
+        texData = ScreenCapture.CaptureScreenshotAsTexture().EncodeToPNG();
 
         Debug.Log("[PLAYER] Play Date: " + playDate);
         Debug.Log("[PLAYER] Play Time: " + playTime);
@@ -93,6 +101,9 @@ public class Player : MonoBehaviour
         TrialOfStrength = data.TrialOfStrength;
         TrialOfMind = data.TrialOfMind;
         TrialOfAgility = data.TrialOfAgility;
+        Trial1 = data.Trial1;
+        Trial2 = data.Trial2;
+        Trial3 = data.Trial3;
         saveName = data.saveName;
         playTime = data.playTime;
         playDate = data.playDate;
@@ -115,6 +126,19 @@ public class Player : MonoBehaviour
         hitSource.Play();
         health -= damage;
         //Debug.Log("Damage: " + health);
+        PlayerUI.UpdateSlider(health);
+    }
+
+    public void HealPlayer(int healing)
+    {
+        if (health + healing >= maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += healing;
+        }
         PlayerUI.UpdateSlider(health);
     }
 }

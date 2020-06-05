@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.VFX;
 
 public class PlayerCharacterController : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class PlayerCharacterController : MonoBehaviour
     public GameObject MindTrophy;
     public GameObject StrengthTrophy;
     public GameObject AgilityTrophy;
+    public GameObject enemies1;
+    public GameObject enemies2;
+    public GameObject enemies3;
 
     public Animator CanvasAnimator;
     public Animator SaveAnimator;
@@ -46,6 +50,9 @@ public class PlayerCharacterController : MonoBehaviour
     //Mobile controls version of the Vector3s that determine a lot of the movement for the character.
     private Vector3 moveRotationMobile = Vector3.zero;
     private Vector3 moveDirectionmMobile = Vector3.zero;
+    public VisualEffect Radiation;
+    public static readonly string VFX_Rate = "Respawn Rate"; //VFX graph variable
+
 
 
 
@@ -171,6 +178,7 @@ public class PlayerCharacterController : MonoBehaviour
                 animate.SetBool("Jumping", true);
                 jumpSource.Play();
                 walkingSource.Stop();
+
             }
         }
         else
@@ -232,6 +240,11 @@ public class PlayerCharacterController : MonoBehaviour
 
         if (characterController.isGrounded)
         {
+            if (isOnGround == false)
+            {
+                animate.SetBool("Jumping", false);
+                jumpSource.Stop();
+            }
             isOnGround = true;
         }
         else 
@@ -296,11 +309,63 @@ public class PlayerCharacterController : MonoBehaviour
         if (collision.gameObject.name == "Village" && GetComponent<Player>().TrialOfAgility == true
             && GetComponent<Player>().TrialOfStrength == true && GetComponent<Player>().TrialOfMind == true)
         {
-            Debug.Log("Loading: Credits");
+            Debug.Log("Loading: Level 2");
             PlayerPrefs.SetInt("LevelToLoad", 3);
             Debug.Log("Level To Load: " + PlayerPrefs.GetInt("LevelToLoad"));
             GetComponent<Player>().SaveGame();
             CanvasAnimator.SetTrigger("FadeOut");
+        }
+
+
+        if (collision.gameObject.name == "Trial1Finish" && GetComponent<Player>().Trial1 != true)
+        {
+            GetComponent<Player>().Trial1 = true;
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
+            GetComponent<Player>().SaveGame();
+         //  StrengthTrophy.SetActive(true);
+            SaveAnimator.SetBool("Saving", true);
+
+            //Destroy(collision.gameObject);
+            //collision.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.name == "Trial2Finish" && GetComponent<Player>().Trial2 != true)
+        {
+            GetComponent<Player>().Trial2 = true;
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
+            GetComponent<Player>().SaveGame();
+           // StrengthTrophy.SetActive(true);
+            SaveAnimator.SetBool("Saving", true);
+
+            //Destroy(collision.gameObject);
+            //collision.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.name == "Trial3Finish" && GetComponent<Player>().Trial3 != true)
+        {
+            GetComponent<Player>().Trial3 = true;
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
+            GetComponent<Player>().SaveGame();
+           // StrengthTrophy.SetActive(true);
+            SaveAnimator.SetBool("Saving", true);
+
+            //Destroy(collision.gameObject);
+            //collision.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.name == "Boat" && GetComponent<Player>().Trial1 == true && GetComponent<Player>().Trial2 == true && GetComponent<Player>().Trial3 == true)
+        {
+            Debug.Log("Loading: Credits");
+            PlayerPrefs.SetInt("LevelToLoad", 4);
+            Debug.Log("Level To Load: " + PlayerPrefs.GetInt("LevelToLoad"));
+            GetComponent<Player>().SaveGame();
+            CanvasAnimator.SetTrigger("FadeOut");
+        }
+
+        if (collision.gameObject.CompareTag("Healer"))
+        {
+            if (GetComponent<Player>().health < GetComponent<Player>().maxHealth)
+            {
+                gameObject.SendMessage("HealPlayer", collision.GetComponent<HealPlayer>().HealAmount);
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

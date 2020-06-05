@@ -394,12 +394,13 @@ GameObject:
   - component: {fileID: 5635796190183865278}
   - component: {fileID: 5635796190183865272}
   - component: {fileID: 5635796190183865276}
-  - component: {fileID: 5635796190183865279}
   - component: {fileID: 3725527693843341090}
   - component: {fileID: 8449233085265637892}
   - component: {fileID: 2193679314172229098}
   - component: {fileID: 3035527367128451527}
   - component: {fileID: 8481854451347880409}
+  - component: {fileID: 1557864449931200462}
+  - component: {fileID: 570944522873213612}
   m_Layer: 0
   m_Name: Boximon Fiery-Mage
   m_TagString: AI
@@ -476,43 +477,15 @@ NavMeshAgent:
   m_Speed: 3
   m_Acceleration: 4
   avoidancePriority: 50
-  m_AngularSpeed: 0
+  m_AngularSpeed: 120
   m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 1
+  m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5635796190183865279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466790745196595828}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9b99397f12ab9344a6869b48c5e4dd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 15
-  currentHealth: 0
-  fireballDamage: 8
-  damageTaken: 5
-  maxDistance: 25
-  damageDealt: 1
-  cooldown: 0
-  distance: 0
-  holder: {fileID: 1456810165671682900, guid: 4a8ebdbf57ccc254a81128d1a6f8474f, type: 3}
-  player: {fileID: 2738176738014777633, guid: 92c0fcf18393cc345b6e0472e58ea345, type: 3}
-  animate: {fileID: 8449233085265637892}
-  isDead: 0
-  isDamaged: 0
-  stupidboolname: 0
-  johnCena: 0
-  boxCollider: {fileID: 5635796190183865278}
 --- !u!54 &3725527693843341090
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -670,7 +643,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466790745196595828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f279fd4d2e8bd40b3dc2baf9bb2157, type: 3}
   m_Name: 
@@ -691,6 +664,49 @@ MonoBehaviour:
   stupidboolname: 0
   johnCena: 0
   boxCollider: {fileID: 5635796190183865278}
+--- !u!114 &1557864449931200462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466790745196595828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d061e92a7eac047a11696229d320e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 16
+  maxHealth: 15
+  currentHealth: 0
+  enemyWalking: {fileID: 0}
+  enemyHit: {fileID: 0}
+  enemyMelee: {fileID: 0}
+  enemyDeath: {fileID: 0}
+  checkRate: 0
+  nextCheck: 0
+  TakeHitTimer: 0
+  AttackTimer: 0
+  stopDistance: 31.52
+  MinWander: 4
+  MaxWander: 6
+  lookRadius: 41.84
+  attackTimer: 0
+  Playercol: {fileID: 0}
+  playerWeaponHitBox: {fileID: 0}
+--- !u!114 &570944522873213612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466790745196595828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfd10505ba78924c927851c5302babf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1623658315406621329
 GameObject:
   m_ObjectHideFlags: 0

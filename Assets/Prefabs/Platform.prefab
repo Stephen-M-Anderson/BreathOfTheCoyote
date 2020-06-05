@@ -123,9 +123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f3e65370829c1488b56c9496b34022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tP: {fileID: 0}
-  speedS: 10
-  movingtime: 1.3
+  points: []
+  current: 0
+  speed: 0
+  Platmove: {x: 0, y: 0, z: 0}
+  dist: 0
 --- !u!114 &5888285700882620597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PolyMesh:
-    name: PolybrushMesh45932
+    name: PolybrushMesh62392
     vertices:
     - {x: 0.48895165, y: -0.48927414, z: 0.49371588}
     - {x: -0.48504674, y: -0.48666683, z: 0.47969595}
