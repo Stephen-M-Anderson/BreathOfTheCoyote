@@ -98,7 +98,7 @@ public class BoximonBoss : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(myAnimator.GetBool("Attack"));
+
 
         player = GameObject.Find("PlayerCharacter").transform;
         navMeshAgent.speed = speed;

@@ -78,6 +78,24 @@ public class PlayerCharacterController : MonoBehaviour
         sprintSource = GameObject.Find("PlayerSprint").GetComponent<AudioSource>();
         jumpSource = GameObject.Find("PlayerJump").GetComponent<AudioSource>();
         deathSource = GameObject.Find("PlayerDeath").GetComponent<AudioSource>();
+
+
+
+
+        if (GetComponent<Player>().Trial1 == true)
+        {
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
+        }
+
+        if (GetComponent<Player>().Trial2 == true)
+        {
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
+        }
+
+        if (GetComponent<Player>().Trial3 == true)
+        {
+            Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate)+50f);
+        }
     }
 
     //This function was added to be accessed by the touchscreen touch button's onclick.
@@ -266,6 +284,7 @@ public class PlayerCharacterController : MonoBehaviour
         {
             StrengthTrophy.SetActive(true);
         }
+
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -312,6 +331,7 @@ public class PlayerCharacterController : MonoBehaviour
             Debug.Log("Loading: Level 2");
             PlayerPrefs.SetInt("LevelToLoad", 3);
             Debug.Log("Level To Load: " + PlayerPrefs.GetInt("LevelToLoad"));
+            PlayerPrefs.SetInt("NewLevel", 0);
             GetComponent<Player>().SaveGame();
             CanvasAnimator.SetTrigger("FadeOut");
         }
@@ -321,6 +341,7 @@ public class PlayerCharacterController : MonoBehaviour
         {
             GetComponent<Player>().Trial1 = true;
             Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
+            PlayerPrefs.SetFloat("Level2_VFXrate", Radiation.GetFloat(VFX_Rate) + 50f);
             GetComponent<Player>().SaveGame();
          //  StrengthTrophy.SetActive(true);
             SaveAnimator.SetBool("Saving", true);
@@ -332,6 +353,7 @@ public class PlayerCharacterController : MonoBehaviour
         {
             GetComponent<Player>().Trial2 = true;
             Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
+            PlayerPrefs.SetFloat("Level2_VFXrate", Radiation.GetFloat(VFX_Rate) + 50f);
             GetComponent<Player>().SaveGame();
            // StrengthTrophy.SetActive(true);
             SaveAnimator.SetBool("Saving", true);
@@ -343,6 +365,7 @@ public class PlayerCharacterController : MonoBehaviour
         {
             GetComponent<Player>().Trial3 = true;
             Radiation.SetFloat(VFX_Rate, Radiation.GetFloat(VFX_Rate) + 50f);
+            PlayerPrefs.SetFloat("Level2_VFXrate", Radiation.GetFloat(VFX_Rate) + 50f);
             GetComponent<Player>().SaveGame();
            // StrengthTrophy.SetActive(true);
             SaveAnimator.SetBool("Saving", true);
