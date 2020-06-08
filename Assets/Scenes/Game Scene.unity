@@ -8035,116 +8035,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 6277952335189393073, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: BGMSource
-      value: 
-      objectReference: {fileID: 1457059813}
-    - target: {fileID: 6277952335189393073, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: myCamera
-      value: 
-      objectReference: {fileID: 28642036}
-    - target: {fileID: 6277952335189393073, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: fireballBool
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1548614324526980420, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: keyComboBool
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: CanvasAnimator
-      value: 
-      objectReference: {fileID: 1781608236}
-    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: SaveAnimator
-      value: 
-      objectReference: {fileID: 913332021}
-    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 37425683}
-    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: HeyFuckYouJoystick
-      value: 
-      objectReference: {fileID: 1860956367}
-    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: jumpingBool
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 28642036}
-    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: Radiation
-      value: 
-      objectReference: {fileID: 1799722199}
-    - target: {fileID: 2738176738014777638, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: PlayerUI
-      value: 
-      objectReference: {fileID: 73007790477160616}
-    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: groundedcheck
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: BGMSource
-      value: 
-      objectReference: {fileID: 1333358074}
-    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 37425683}
-    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: groundslamBool
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_YAxis.m_MaxSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_XAxis.m_MaxSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_BindingMode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_XAxis.Value
-      value: 145.9868
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_YAxisRecentering.m_enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: m_RecenterToTargetHeading.m_enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1415446281208013618, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8200,6 +8090,91 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: groundedcheck
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: BGMSource
+      value: 
+      objectReference: {fileID: 1333358074}
+    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 37425683}
+    - target: {fileID: 8336711680646678001, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: groundslamBool
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738176738014777638, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: PlayerUI
+      value: 
+      objectReference: {fileID: 73007790477160616}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: CanvasAnimator
+      value: 
+      objectReference: {fileID: 1781608236}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: SaveAnimator
+      value: 
+      objectReference: {fileID: 913332021}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 37425683}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: HeyFuckYouJoystick
+      value: 
+      objectReference: {fileID: 1860956367}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: jumpingBool
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 28642036}
+    - target: {fileID: 8111245024123240754, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: Radiation
+      value: 
+      objectReference: {fileID: 1799722199}
+    - target: {fileID: 1548614324526980420, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: keyComboBool
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111245024172827316, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: BGMSource
+      value: 
+      objectReference: {fileID: 1884086689}
+    - target: {fileID: 6277952335189393073, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: BGMSource
+      value: 
+      objectReference: {fileID: 1457059813}
+    - target: {fileID: 6277952335189393073, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 28642036}
+    - target: {fileID: 6277952335189393073, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: fireballBool
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5172158829027271394, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8215,11 +8190,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 8.75
       objectReference: {fileID: 0}
-    - target: {fileID: 8111245024172827316, guid: 92c0fcf18393cc345b6e0472e58ea345,
-        type: 3}
-      propertyPath: BGMSource
-      value: 
-      objectReference: {fileID: 1884086689}
     - target: {fileID: 4069917127559971261, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_TagString
@@ -8228,22 +8198,22 @@ PrefabInstance:
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.19070505
+      value: -0.19070508
       objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0008749366
+      value: 0.00087490684
       objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0044459887
+      value: -0.0044459966
       objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.981637
+      value: -0.98163694
       objectReference: {fileID: 0}
     - target: {fileID: 5172158830086978511, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -8278,7 +8248,7 @@ PrefabInstance:
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.019093143
+      value: 0.019093141
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -8288,7 +8258,7 @@ PrefabInstance:
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00432829
+      value: 0.0043282993
       objectReference: {fileID: 0}
     - target: {fileID: 5172158829648137996, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -8309,6 +8279,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_YAxis.m_MaxSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_XAxis.m_MaxSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_BindingMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_XAxis.Value
+      value: 145.9868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_YAxisRecentering.m_enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172158829027271392, guid: 92c0fcf18393cc345b6e0472e58ea345,
+        type: 3}
+      propertyPath: m_RecenterToTargetHeading.m_enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5512732376204144447, guid: 92c0fcf18393cc345b6e0472e58ea345,
         type: 3}
@@ -15682,6 +15682,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Bool
       objectReference: {fileID: 0}
+    - target: {fileID: 6901447779749148475, guid: 7c814b449e77a594590ed06f92fbc0bf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0743768
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589078474506024256, guid: 7c814b449e77a594590ed06f92fbc0bf,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5433749093df82c46b6e6fb0be9a661e,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 3410426142598139614, guid: 7c814b449e77a594590ed06f92fbc0bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7c814b449e77a594590ed06f92fbc0bf, type: 3}
