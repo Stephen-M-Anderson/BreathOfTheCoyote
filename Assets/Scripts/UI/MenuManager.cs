@@ -233,7 +233,7 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Loading... " + saveGameName);
         PlayerPrefs.SetString("SaveGameName", saveGameName);
-        PlayerPrefs.SetInt("LevelToLoad", 2);
+        PlayerPrefs.SetInt("LevelToLoad", PlayerPrefs.GetInt("Lastscenein"));
         animator.SetTrigger("FadeOut");
         gameObject.GetComponent<StartupLoader>().LoadLevel(1);
         //SceneManager.LoadScene(0);

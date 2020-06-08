@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
         hitSource = GameObject.Find("PlayerHit").GetComponent<AudioSource>();
         playdead = true;
         maxHealth = health;
+        PlayerPrefs.SetInt("Lastscenein", PlayerPrefs.GetInt("LevelToLoad"));
     }
 
     private void Update()
