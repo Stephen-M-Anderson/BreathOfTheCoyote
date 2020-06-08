@@ -25,10 +25,13 @@ public class StartupLoader : MonoBehaviour
     {
         //Debug.Log("Load Level");
         StartCoroutine(LoadLevelAsynchronously(sceneIndex));
+        Debug.Log(sceneIndex);
+
     }
 
     IEnumerator LoadLevelAsynchronously(int sceneIndex)
     {
+        Debug.Log(sceneIndex);
         loadOperation = SceneManager.LoadSceneAsync(sceneIndex);
 
         while(!loadOperation.isDone)

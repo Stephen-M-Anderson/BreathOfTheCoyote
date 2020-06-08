@@ -20,7 +20,7 @@ public class BattleMusicPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "TrialOfStrength") //|| other.gameObject.tag == "Combat")
+        if(other.gameObject.name == "TrialOfStrength" || other.gameObject.name == "MageSpawner" || other.gameObject.name == "Bossfight") //|| other.gameObject.tag == "Combat")
         {
             Debug.Log("Entered Trial of Strength");
 
@@ -33,7 +33,7 @@ public class BattleMusicPlayer : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "TrialOfStrength") //|| other.gameObject.tag == "Combat")
+        if (other.gameObject.name == "TrialOfStrength" || other.gameObject.name == "MageSpawner" || other.gameObject.name == "Bossfight") //|| other.gameObject.tag == "Combat")
         {
             Debug.Log("Left Trial of Strength");
 

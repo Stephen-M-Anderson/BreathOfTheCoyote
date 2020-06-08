@@ -30,7 +30,14 @@ public class GameManager : MonoBehaviour
         else
         {
             player.LoadGame();
-            playerObject.transform.position = player.playerPosition;
+            if (PlayerPrefs.GetInt("NewLevel") == 0)
+            {
+                PlayerPrefs.SetInt("NewLevel", 1);
+            }
+            else
+            {
+                playerObject.transform.position = player.playerPosition;
+            }
         }
 
         if (player != null)

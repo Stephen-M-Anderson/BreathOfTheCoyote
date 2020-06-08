@@ -17,11 +17,12 @@ public class ChaseState : BaseState
 
     public override Type Tick()
     {
-      
+        _boximon.speed =  13f;
         _boximon.myAnimator.SetBool("TakingHit",false);
         _boximon.myAnimator.SetBool("Idle", false);
-        _boximon.myAnimator.SetBool("Movement", true);
         _boximon.myAnimator.SetBool("Attack", false);
+        _boximon.myAnimator.SetBool("Movement", true);
+        
 
         _boximon.enemyHit.Stop();
         _boximon.enemyWalking.Play();
@@ -36,11 +37,11 @@ public class ChaseState : BaseState
           
             _boximon.navMeshAgent.enabled = true;
             _boximon.SetTarget(_boximon.player.position);
-            _boximon.navMeshAgent.SetDestination(_boximon.Target);        
+            _boximon.navMeshAgent.SetDestination(_boximon.player.position);        
             return typeof(ChaseState);               
         }
         else if(Vector3.Distance(transform.position, _boximon.player.position) <= _boximon.stopDistance){
-       
+            
             _boximon.navMeshAgent.enabled = false;
             return typeof(AttackState);
         }

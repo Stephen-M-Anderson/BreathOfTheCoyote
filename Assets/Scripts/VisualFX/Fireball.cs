@@ -34,7 +34,7 @@ public class Fireball : MonoBehaviour
         if (cooldownTimer > 1.0f)
 
         {
-            Debug.Log(fireballBool);
+
             if (Input.GetAxis("Fireball") > 0 || fireballBool == true)
 
             {

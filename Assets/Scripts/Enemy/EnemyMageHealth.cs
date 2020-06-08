@@ -125,7 +125,7 @@ public class EnemyMageHealth : MonoBehaviour
             Invoke("Dead", 2.0f);
             playdead = false;
         }
-        */
+        
 
         if (johnCena && currentHealth > 0)
         {
@@ -208,6 +208,7 @@ public class EnemyMageHealth : MonoBehaviour
            //animate.SetBool("Attack", false);
 
         }
+        */
         if (animate.GetBool("Attack"))  //next three if statements check if the attack animation bool is borken or frozen and sets them to false.
         {
             Watcher += Time.deltaTime;
@@ -221,7 +222,7 @@ public class EnemyMageHealth : MonoBehaviour
             animate.SetBool("Attack", false);
             Watcher = 0f;
         }
-
+    
         if (!Enemycollided && EnemyCanAttack && !johnCena && playdead) //enemy hasnt collided but is in range and hasnt been hit
         {
             Enemycollided = true;
@@ -301,6 +302,5 @@ public class EnemyMageHealth : MonoBehaviour
     {
         animate.SetBool("Attack", false);
         animate.SetBool("Idle", true);
-
     }
 }
